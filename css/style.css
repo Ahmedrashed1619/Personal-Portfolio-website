@@ -8,6 +8,8 @@ body{
     font-family: 'Oleo Script', cursive;
     letter-spacing: 0.125rem;
 }
+
+/* section header (Home) */
 .header{
     background-image: url(../img/pexels-eberhard-grossgasteiger-1624496.jpg);
     background-position: center center;
@@ -33,6 +35,8 @@ body{
 .second-bg{
     background-color: var(--secondColor);
 }
+
+/* animation  */
 .title-header .move{
     position: relative;
     animation-name: move;
@@ -44,6 +48,8 @@ body{
     0% {top: 0}
     100% {top: 40px}
 }
+
+/* navbar.. */
 .navbar-brand{
     font-family: 'Oleo Script Swash Caps', cursive;
 }
@@ -113,6 +119,7 @@ body{
     background-color: #6e5494;
 }
 
+/* Responsive section home.. */
 @media screen and (min-width: 992px){
     .navbar-collapse{
         background-color: transparent !important;
