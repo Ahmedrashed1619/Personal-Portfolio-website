@@ -1,0 +1,156 @@
+
+:root{
+    --mainColor :crimson;
+    --secondColor:rgba(0, 0, 0, 0.655);
+}
+
+body{
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
+}
+.header{
+    background-image: url(../img/pexels-eberhard-grossgasteiger-1624496.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.caption{
+    background-color: var(--secondColor);
+}
+.fs-h1{
+    font-size: 5rem;
+}
+.main-color{
+    color: var(--mainColor);
+}
+.main-bg{
+    background-color: var(--mainColor);
+}
+.second-color{
+    color: var(--secondColor);
+}
+.second-bg{
+    background-color: var(--secondColor);
+}
+.title-header .move{
+    position: relative;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes move {
+    0% {top: 0}
+    100% {top: 40px}
+}
+.navbar-brand{
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+.navbar-brand:hover{
+    color: var(--mainColor);
+}
+.navbar-nav a{
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.25s;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    font-weight: bold;
+}
+.navbar-nav .active,
+ .navbar-nav a:focus,
+  .navbar-nav a:hover
+{
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    color: var(--mainColor) !important;
+}
+.navbar .navbar-toggler{
+    color: #fff;
+    transition: all 0.25s;
+}
+.navbar button svg{
+    font-size: 1.5rem !important;
+}
+.navbar .navbar-toggler:focus,
+ .navbar .navbar-toggler:hover
+{
+    box-shadow: none;
+}
+.navbar-collapse{
+    background-color: var(--secondColor);
+}
+.navbar-collapse .navbar-nav{
+    width: 100% !important;
+}
+.title-header img{
+    width: 25%;
+}
+.my-links .links {
+    list-style-type: none;
+}
+.my-links .links a svg{
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.5s;
+    font-size: 1rem;
+}
+
+.fa-facebook-f:hover{
+    background-color: #1877f2;
+}
+.fa-instagram:hover{
+    background-color: #e1306c;
+}
+.fa-twitter:hover{
+    background-color: #1da1f2;
+}
+.fa-linkedin-in:hover{
+    background-color: #0077b5;
+}
+.fa-github:hover{
+    background-color: #6e5494;
+}
+
+@media screen and (min-width: 992px){
+    .navbar-collapse{
+        background-color: transparent !important;
+    }
+    .navbar-collapse .navbar-nav{
+        width: 70% !important;
+    }
+    .navbar-nav a{
+        margin-bottom: 0;
+    }
+    .title-header img{
+        width: 15%;
+    }
+    .my-links .links {
+        display: flex !important;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+    }
+}
+@media screen and (max-width:768px) {
+    .fs-h1{
+        font-size: 3.5rem;
+    }
+    .title-header .move{
+        animation: none;
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    .my-links .links {
+        display: none !important;
+    }
+    .navbar .navbar-toggler{
+        margin-left: auto !important;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    .fs-h1{
+        font-size: 4rem;
+    }
+}
