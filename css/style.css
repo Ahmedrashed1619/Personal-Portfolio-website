@@ -1,12 +1,12 @@
 
 :root{
     --mainColor :crimson;
-    --secondColor:rgba(0, 0, 0, 0.655);
+    --secondColor:rgba(0, 0, 0, 0.7);
 }
 
 body{
-    font-family: 'Oleo Script', cursive;
-    letter-spacing: 0.125rem;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Poppins', sans-serif;
 }
 
 /* section header (Home) */
@@ -19,6 +19,8 @@ body{
 }
 .caption{
     background-color: var(--secondColor);
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
 }
 .fs-h1{
     font-size: 5rem;
@@ -36,7 +38,7 @@ body{
     background-color: var(--secondColor);
 }
 
-/* animation  */
+/* animation */
 .title-header .move{
     position: relative;
     animation-name: move;
@@ -45,13 +47,14 @@ body{
     animation-iteration-count: infinite;
 }
 @keyframes move {
-    0% {top: 0}
-    100% {top: 40px}
+    0% {top: 0px}
+    100% {top: 80px}
 }
 
 /* navbar.. */
-.navbar-brand{
-    font-family: 'Oleo Script Swash Caps', cursive;
+nav{
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
 }
 .navbar-brand:hover{
     color: var(--mainColor);
@@ -64,7 +67,7 @@ body{
     text-align: center;
     font-weight: bold;
 }
-.navbar-nav .active,
+.active,
  .navbar-nav a:focus,
   .navbar-nav a:hover
 {
@@ -96,11 +99,11 @@ body{
 .my-links .links {
     list-style-type: none;
 }
-.my-links .links a svg{
+.links a svg{
     color: #fff;
     border-radius: 50%;
     transition: all 0.5s;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .fa-facebook-f:hover{
@@ -159,5 +162,113 @@ body{
 @media screen and (min-width:768px) and (max-width:992px) {
     .fs-h1{
         font-size: 4rem;
+    }
+}
+
+/* ...section About... */
+.about-img img{
+    box-shadow: 0px 5px 50px rgb(0 0 0 / 50%);
+    border-radius: 10px;
+}
+.about-img{
+    position: relative;
+}
+.layer-img{
+    position: absolute;
+    width: 75%;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 12.5%;
+    margin-left: 12.5%;
+    background: var(--secondColor);
+    cursor: pointer;
+    transition: all 0.75s;
+}
+.about-img:hover .layer-img{
+    opacity: 1;
+    top: 0;
+}
+.main-title{
+    position: relative;
+}
+.main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 45%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 45%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+
+.about-title h4{
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
+}
+.about-title p a{
+    transition: all 0.25s;
+}
+.about-title p a:hover{
+    color: var(--mainColor) !important;
+}
+
+/* Responsive section about.. */
+@media screen and (min-width:992px) {
+    .about-title h4 .last-span{
+        font-size: 1.4rem !important;
+    }
+}
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .main-title h6:before{
+        left: 44%;
+    }
+    .main-title h6:after{
+        right: 44%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .main-title h6:before{
+        left: 43%;
+    }
+    .main-title h6:after{
+        right: 43%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .main-title h6:before{
+        left: 41%;
+    }
+    .main-title h6:after{
+        right: 41%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .main-title h6:before{
+        left: 38%;
+    }
+    .main-title h6:after{
+        right: 38%;
+    }
+}
+@media screen and (max-width:600px){
+    .main-title h6:before{
+        left: 37%;
+    }
+    .main-title h6:after{
+        right: 37%;
     }
 }
