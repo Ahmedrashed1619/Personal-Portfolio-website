@@ -1,6 +1,90 @@
 
 //....................Selectors...................
 
+let navbar = document.querySelector('.navbar');
+// let active = document.querySelector('.active');
+// let brand  = document.querySelector('.navbar-brand');
+let collapse = document.querySelector('.navbar-collapse');
+let rotation = document.querySelector('.rotate-icon');
+let colorShow = document.querySelector('.colors');
+let changeColors = Array.from (document.querySelectorAll('.col-12 ul li'));
+let defultColor = document.querySelector('.defult');
+let myValue ;
+
+// change main colorShow...
+
+for(let i = 0; i < changeColors.length; i++){
+    changeColors[i].addEventListener('click' , function(){
+        myValue = window.getComputedStyle(changeColors[i] ,null).getPropertyValue('background-color');
+        document.documentElement.style.setProperty('--mainColor', `${myValue}`);
+    })
+}
+
+defultColor.addEventListener('click' , function(){
+    myValue = window.getComputedStyle(defultColor ,null).getPropertyValue('background-color');
+    document.documentElement.style.setProperty('--mainColor', `${myValue}`);
+})
+
+
+// when scroll event...
+
+window.addEventListener('scroll',function(){
+    if(this.scrollY > 30)
+    {
+        navbar.classList.add('sticky');
+        // active.classList.add('white-color');
+        // brand.classList.add('white-color');
+        collapse.classList.add('bg-trans');
+    }
+    else
+    {
+        navbar.classList.remove('sticky');
+        // active.classList.remove('white-color');
+        // brand.classList.remove('white-color');
+        collapse.classList.remove('bg-trans');
+    }
+})
+
+
+// rotation location colors container.... 
+
+let right = colorShow.style.right = '-265px';
+
+rotation.addEventListener('click', function(e){
+    e.preventDefault();
+    right =! right;
+    if(right)
+    {
+        colorShow.style.right = '0px';
+    }
+    else
+    {
+        colorShow.style.right = '-265px';
+    }
+})
+
+
+// Auto typing...
+
+// let typed = new typed('.typing' , {
+//     Strings : ["Developer" , "Designer" , "Freelancer"],
+//     typeSpeed : 100,
+//     backSpeed : 60,
+//     loop : true
+// });
+
+
+
+
+
+
+
+
+
+
+
+//....................Selectors...................
+
 // var anchors = Array.from(document.querySelectorAll('ul li a'));
 // var showData = document.getElementById('show');
 // var searchInput = document.getElementById('search');
