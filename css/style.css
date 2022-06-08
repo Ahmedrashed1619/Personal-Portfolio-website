@@ -5,7 +5,6 @@
 }
 
 body{
-    /* font-family: 'Ubuntu', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -28,6 +27,7 @@ body{
     height: 35px;
     cursor: pointer;
     border-radius: 50%;
+    transition: all 0.5s;
 }
 .screen-show > a{
     position: absolute;
@@ -35,6 +35,7 @@ body{
     left: -53px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 .screen-show > a svg{
     position: relative;
@@ -89,6 +90,9 @@ body{
     border: none;
     border-radius: 5px;
 }
+
+
+
 /* section header (Home) */
 .header{
     background-image: url(../img/pexels-eberhard-grossgasteiger-1624496.jpg);
@@ -120,6 +124,9 @@ body{
 .bg-simeBlack{
     background-color: rgba(0, 0, 0, 0.9);
 }
+.btn:focus{
+    box-shadow: none !important;
+}
 
 /* animation */
 .title-header .move{
@@ -134,6 +141,8 @@ body{
     100% {top: 60px}
 }
 
+
+
 /* navbar.. */
 nav{
     font-family: 'Oleo Script', cursive;
@@ -142,9 +151,6 @@ nav{
 .navbar, .navbar-brand{
     transition: all 0.25s;
 }
-/* .navbar-brand{
-    
-} */
 .sticky{
     background-color:var(--secondColor)  !important;
 }
@@ -153,7 +159,7 @@ nav{
 }
 .navbar-nav a{
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: all 0.25s;
     margin-bottom: 0.25rem;
     text-align: center;
@@ -163,8 +169,6 @@ nav{
  .navbar-nav a:focus,
   .navbar-nav a:hover
 {
-    font-size: 1rem !important;
-    font-weight: bold !important;
     color: var(--mainColor) !important;
 }
 .white-color{
@@ -185,15 +189,12 @@ nav{
 .navbar-collapse{
     background-color: var(--secondColor);
 }
-/* .bg-white{
-    background-color: #fff !important;
-} */
 .bg-trans{
     background-color: transparent !important;
 }
-.navbar-collapse .navbar-nav{
+/* .navbar-collapse .navbar-nav{
     width: 100% !important;
-}
+} */
 .title-header img{
     width: 25%;
 }
@@ -205,6 +206,9 @@ nav{
     border-radius: 50%;
     transition: all 0.5s;
     font-size: 1.25rem;
+}
+.typing{
+    transition: all 0.25s !important;
 }
 
 /* social icons.. */
@@ -267,6 +271,8 @@ nav{
     }
 }
 
+
+
 /* ...section About... */
 .about-img img{
     box-shadow: 0px 5px 50px rgb(0 0 0 / 50%);
@@ -282,8 +288,6 @@ nav{
     left: 0;
     right: 0;
     bottom: 0;
-    /* margin-right: 12.5%; */
-    /* margin-left: 12.5%; */
     background: var(--secondColor);
     cursor: pointer;
     transition: all 0.75s;
@@ -292,7 +296,7 @@ nav{
     opacity: 1;
     top: 0;
 }
-.main-title{
+.about .main-title{
     position: relative;
 }
 .main-title h6:before{
@@ -315,7 +319,6 @@ nav{
     height: 2.5px;
     background-color: #000;
 }
-
 .about-title h4{
     font-family: 'Oleo Script', cursive;
     letter-spacing: 0.125rem;
@@ -327,7 +330,7 @@ nav{
     color: var(--mainColor) !important;
 }
 
-/* Responsive section about.. */
+/* ...Responsive section about... */
 @media screen and (min-width:1200px) and (max-width:1400px){
     .main-title h6:before{
         left: 44%;
@@ -371,3 +374,190 @@ nav{
         right: 37%;
     }
 }
+
+
+
+/* ....section Services.... */
+.services{
+    background-image: url(../img/pexels-djordje-petrovic-2102416.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.services .main-title{
+    position: relative;
+}
+.services .main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 43.5%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.25px;
+    background-color: #fff;
+}
+.services .main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 43.5%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.25px;
+    background-color: #fff;
+}
+.services .service{
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px rgb(0 0 0 / 50%);
+    transition:  all 0.25s;
+    cursor: pointer;
+}
+.services .service svg{
+    transition: all 0.5s;
+}
+.services .service p span{
+    transition: all 0.5s;
+}
+.services .service:hover{
+    background-color: var(--mainColor) !important;
+}
+.services .service:hover svg{
+    color: #fff !important;
+}
+.services .service:hover p span{
+    color: #fff !important;
+}
+
+/* ...Responsive section services... */
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .services .main-title h6:before{
+        left: 42.5%;
+    }
+    .services .main-title h6:after{
+        right: 42.5%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .services .main-title h6:before{
+        left: 41%;
+    }
+    .services .main-title h6:after{
+        right: 41%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .services .main-title h6:before{
+        left: 38%;
+    }
+    .services .main-title h6:after{
+        right: 38%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .services .main-title h6:before{
+        left: 34%;
+    }
+    .services .main-title h6:after{
+        right: 34%;
+    }
+}
+@media screen and (max-width:600px){
+    .services .main-title h6:before{
+        left: 32.75%;
+    }
+    .services .main-title h6:after{
+        right: 32.75%;
+    }
+}
+
+
+
+/* ....section Skills.... */
+.skills .main-title{
+    position: relative;
+}
+.skills .main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 44.5%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.skills .main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 44.5%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.w-65{
+    width: 65%;
+}
+.w-80{
+    width: 80%;
+}
+.w-85{
+    width: 85%;
+}
+.w-90{
+    width: 90%;
+}
+.parent{
+    margin: 1.5rem auto;
+    width: 85%;
+}
+.progress-bar{
+    background-color: var(--mainColor);
+}
+
+/* ...Responsive section skills... */
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .skills .main-title h6:before{
+        left: 43.75%;
+    }
+    .skills .main-title h6:after{
+        right: 43.75%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .skills .main-title h6:before{
+        left: 42.5%;
+    }
+    .skills .main-title h6:after{
+        right: 42.5%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .skills .main-title h6:before{
+        left: 40%;
+    }
+    .skills .main-title h6:after{
+        right: 40%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .skills .main-title h6:before{
+        left: 36.75%;
+    }
+    .skills .main-title h6:after{
+        right: 36.75%;
+    }
+}
+@media screen and (max-width:600px){
+    .skills .main-title h6:before{
+        left: 36%;
+    }
+    .skills .main-title h6:after{
+        right: 36%;
+    }
+}
+
+
