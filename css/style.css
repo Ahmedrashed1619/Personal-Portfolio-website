@@ -627,6 +627,7 @@ nav{
     color: var(--mainColor);
 }
 
+
 /* ...responsive footer... */
 @media screen and (max-width:992px){
     .cont-footer{
