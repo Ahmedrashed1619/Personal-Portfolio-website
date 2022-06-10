@@ -609,16 +609,93 @@ nav{
 }
 
 
-/* ...Footer... */
-.cont-footer > a, .cont-footer > a svg{
+/* ...section contact... */
+.contact .main-title{
+    position: relative;
+}
+.contact .main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 44.5%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.contact .main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 44.5%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.contact .info h6{
+    margin-bottom: 3px;
+}
+.contact .info a{
     transition: all 0.25s;
 }
-.cont-footer > a:hover{
-    color: #fff !important;
+.contact .info a:hover{
+    color: var(--mainColor) !important;
 }
-.cont-footer > a:hover svg{
-    background-color: var(--mainColor) !important;
+textarea{
+    resize: none;
 }
+.form-control:focus{
+    box-shadow: none;
+    border-color: var(--mainColor) !important;
+}
+
+
+
+/* ...Responsive section contact... */
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .contact .main-title h6:before{
+        left: 43.5%;
+    }
+    .contact .main-title h6:after{
+        right: 43.5%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .contact .main-title h6:before{
+        left: 42.25%;
+    }
+    .contact .main-title h6:after{
+        right: 42.25%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .contact .main-title h6:before{
+        left: 39.5%;
+    }
+    .contact .main-title h6:after{
+        right: 39.5%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .contact .main-title h6:before{
+        left: 36.25%;
+    }
+    .contact .main-title h6:after{
+        right: 36.25%;
+    }
+}
+@media screen and (max-width:600px){
+    .contact .main-title h6:before{
+        left: 34.75%;
+    }
+    .contact .main-title h6:after{
+        right: 34.75%;
+    }
+}
+
+
+/* ...Footer... */
 .copy-right a{
     transition: all 0.25s;
     text-decoration: none;
@@ -626,7 +703,6 @@ nav{
 .copy-right a:hover{
     color: var(--mainColor);
 }
-
 
 /* ...responsive footer... */
 @media screen and (max-width:992px){
