@@ -585,6 +585,10 @@ nav{
 .portfolio .product img{
     height: 300px;
     border-radius: 5px;
+    transition: all 0.5s;
+}
+.portfolio .product:hover img{
+    transform: scale(1.1 , 1.1);
 }
 .portfolio .product p span{
     cursor: pointer;
@@ -595,16 +599,17 @@ nav{
 }
 .portfolio .product .product-title{
     position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     top: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transition: all 0.75s;
+    overflow: hidden;
+    transition: all 0.75s 0.5s;
 }
 .portfolio .product:hover .product-title{
-    top: 8px;
+    top: 0;
     opacity: 1;
 }
 
