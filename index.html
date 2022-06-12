@@ -6,6 +6,7 @@
       <meta charset="UTF-8">
       <meta name = "description" content="Personal Portfolio">
       <meta name = "kaywords" content="Personal Portfolio">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500&family=Alegreya:wght@500&family=Inspiration&family=Lobster&family=Oleo+Script&family=Oleo+Script+Swash+Caps:wght@700&family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@600;900&family=Ubuntu:wght@400;500;700&family=Yeseva+One&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -73,8 +74,8 @@
    <div class="container-fluid container-lg">
       <a class="navbar-brand main-color fs-1" href="">Rashed</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <!-- <span class="navbar-toggler-icon"></span> -->
-         <i class="fa-solid fa-bars fs-4"></i>
+         <!-- <i id="x-ray" class="fa-solid fa-x d-none"></i> -->
+         <i id="togg" class="fa-solid fa-bars fs-4"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav ms-auto mx-lg-auto mb-2 mb-lg-0 d-flex justify-content-evenly align-items-center">
@@ -103,19 +104,19 @@
       <div class="my-links">
          <ul class="links mt-3">
             <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f p-2"></i></a>
+               <a class="nav-link" target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f"></i></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" target="_blank" href=""><i class="fa-brands fa-instagram p-2"></i></a>
+               <a class="nav-link" target="_blank" href="https://www.instagram.com/a.rashed1619"><i class="fa-brands fa-instagram"></i></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter p-2"></i></a>
+               <a class="nav-link" target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter"></i></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in p-2"></i></a>
+               <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in"></i></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github p-2"></i></a>
+               <a class="nav-link" target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github"></i></a>
             </li>
          </ul>
       </div>
@@ -139,7 +140,7 @@
                   <div class="layer-img d-flex justify-content-center align-items-center w-100 mx-auto">
                      <div class="links text-white w-75 mx-auto d-flex justify-content-evenly align-items-center">
                         <a target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f p-3 rounded-circle"></i></a>
-                        <a target="_blank" href=""><i class="fa-brands fa-instagram p-3 rounded-circle"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/a.rashed1619"><i class="fa-brands fa-instagram p-3 rounded-circle"></i></a>
                         <a target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter p-3 rounded-circle"></i></a>
                         <a target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in p-3 rounded-circle"></i></a>
                         <a target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github p-3 rounded-circle"></i></a>
@@ -501,17 +502,17 @@
             </div>
             <div class="col-lg-6">
                <h4 class="fw-bold mb-4">Message me</h4>
-               <form class="form-cont" action="https://formsubmit.co/el/ar9353062@gmail.com" method="POST">
+               <form class="form-cont" action="" method="post" id="sheetdb-form">
                   <div class="input mb-4">
-                     <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
+                     <input id="name" type="text" name="data[name]" class="form-control" placeholder="Name *" required>
                      <div id="alertName" class="alert alert-danger p-1 text-center d-none mx-auto my-2 ">Should be consisting of a capital letter and 2-15 small letters.</div>
                   </div>
                   <div class="input mb-4">
-                     <input id="email" type="email" name="email" class="form-control" placeholder="Email" required>
+                     <input id="email" type="email" name="data[email]" class="form-control" placeholder="Email *" required>
                      <div id="alertEmail" class="alert alert-danger p-1 text-center d-none mx-auto my-2">Should be consisting of 3-15 characters and end with (@gmail.com).</div>
                   </div>
                   <div class="input mb-2">
-                     <textarea id="message" class="form-control" name="message" rows="3" placeholder="Message" required></textarea>
+                     <textarea id="message" class="form-control" name="data[message]" rows="3" placeholder="Message *" required></textarea>
                      <div id="alertMessage" class="alert alert-danger p-1 text-center d-none mx-auto my-2">Should be consisting of 5-150 characters.</div>
                   </div>
                   <p id="alertSend" class="fs-6 d-none mb-0 w-50 text-center mx-auto"></p>
@@ -538,7 +539,7 @@
             <div class="col-lg-6">
                <div class="links text-white w-50 ms-auto d-flex justify-content-evenly align-items-center">
                   <a target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f p-2 rounded-circle"></i></a>
-                  <a target="_blank" href=""><i class="fa-brands fa-instagram p-2 rounded-circle"></i></a>
+                  <a target="_blank" href="https://www.instagram.com/a.rashed1619"><i class="fa-brands fa-instagram p-2 rounded-circle"></i></a>
                   <a target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter p-2 rounded-circle"></i></a>
                   <a target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in p-2 rounded-circle"></i></a>
                   <a target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github p-2 rounded-circle"></i></a>

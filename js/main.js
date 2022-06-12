@@ -23,8 +23,6 @@ let resetBtn = document.getElementById('reset');
 let alertSend = document.getElementById('alertSend');
 
 
-
-
 // add class active to an active link 
 
 // for(let i = 0; i < links.length; i++){
@@ -35,11 +33,25 @@ let alertSend = document.getElementById('alertSend');
 
 
 
+// var form = document.getElementById('sheetdb-form');
+// form.addEventListener('submit', e=> {
+//     e.preventDefault();
+//     fetch(form.action, {
+//         method : "Post",
+//         body : new FormData(document.getElementById('sheetdb-form')),
+//     }).then(
+//         Response => Response.json()
+//     )
+// });
+
+
+
+
 // change main colorShow...
 
 for(let i = 0; i < changeColors.length; i++){
     changeColors[i].addEventListener('click' , function (){
-        // changeColors[i].style.transform = 'scale(0.75 , 0.75)';
+        // changeColors[i].style.padding = '50px';
         myValue = window.getComputedStyle(changeColors[i] ,null).getPropertyValue('background-color');
         document.documentElement.style.setProperty('--mainColor', `${myValue}`);
     })
@@ -108,7 +120,6 @@ function sendValidMessage(){
         alertSend.classList.replace('d-none','d-block');
         alertSend.classList.add('text-success');
         alertSend.classList.remove('text-danger');
-        // sendEmail();
         resetForm();
     }
     else if (isInputEmpty())
