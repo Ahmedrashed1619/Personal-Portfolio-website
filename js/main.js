@@ -1,16 +1,6 @@
 
-//....................Selectors...................
+//....................Form Selectors...................
 
-let navbar = document.querySelector('.navbar');
-// let active = document.querySelector('.active');
-// let brand  = document.querySelector('.navbar-brand');
-let links = Array.from (document.querySelectorAll('.navbar-nav .nav-item a'));
-let collapse = document.querySelector('.navbar-collapse');
-let rotation = document.querySelector('.rotate-icon');
-let colorShow = document.querySelector('.colors');
-let changeColors = Array.from (document.querySelectorAll('.col-12 ul li'));
-let defultColor = document.querySelector('.defult');
-let myValue ;
 let inputs = Array.from(document.querySelectorAll('.form-control'))
 let inputName = document.getElementById('name');
 let inputEmail = document.getElementById('email');
@@ -23,88 +13,119 @@ let resetBtn = document.getElementById('reset');
 let alertSend = document.getElementById('alertSend');
 
 
-// add class active to an active link 
+// loading to init...........
 
-// for(let i = 0; i < links.length; i++){
-//     links[i].addEventListener('click' , function (){
-//         links[i].classList.add('active');
-//     })
-// }
+$(document).ready(function(){
+    $('#loading').fadeOut(2000, function(){
+        $('body').css('overflow','visible')
+    })
+})
 
 
 
-// var form = document.getElementById('sheetdb-form');
-// form.addEventListener('submit', e=> {
-//     e.preventDefault();
-//     fetch(form.action, {
-//         method : "Post",
-//         body : new FormData(document.getElementById('sheetdb-form')),
-//     }).then(
-//         Response => Response.json()
-//     )
-// });
+// rotation location colors container.... 
 
+$('.rotate-icon').click(function(){
+    let currentWidth = $('.colors').width();
+    if($('.colors').css('right') == '0px')
+    {
+        $('.colors').css({'right' : -currentWidth, 'transition' : '1.25s'});
+    }
+    else
+    {
+        $('.colors').css({'right' : '0px', 'transition' : '1.25s'});
+    }
+})
 
 
 
 // change main colorShow...
 
-for(let i = 0; i < changeColors.length; i++){
-    changeColors[i].addEventListener('click' , function (){
-        // changeColors[i].style.padding = '50px';
-        myValue = window.getComputedStyle(changeColors[i] ,null).getPropertyValue('background-color');
-        document.documentElement.style.setProperty('--mainColor', `${myValue}`);
-    })
+let colorsGroup = ['#4169e1', '#66b95c', '#ff9800', '#ff5e94', '#fa5b0f', 'tan', '#9200ee', '#00d4bd', '#5e9e9f', '#e65f78', '#666d41', '#fe0000']
+
+for (let i = 0; i < colorsGroup.length; i++)
+{
+    $('.screen-show .col-12 li').eq(i).css("backgroundColor",colorsGroup[i])
 }
 
-defultColor.addEventListener('click' , function(){
-    myValue = window.getComputedStyle(defultColor ,null).getPropertyValue('background-color');
-    document.documentElement.style.setProperty('--mainColor', `${myValue}`);
+$('.screen-show .col-12 li').click(function(){
+    $(this).css('transform' , 'scale(0.75,0.75)');
+    $(this).siblings().css('transform' , 'scale(1,1)');
+    $(this).parent().parent().siblings().find('li').css('transform' , 'scale(1,1)');
+    let currentColor = $(this).css("backgroundColor");
+    $(document.documentElement).css('--mainColor', currentColor);
 })
+
+$('.defult').click(function(){
+    let myValue = $('.defult').css('backgroundColor');
+    $(document.documentElement).css('--mainColor', myValue);
+    $('.screen-show').find('li').css('transform' , 'scale(1,1)');
+})
+
 
 
 // when scroll event...
 
-window.addEventListener('scroll',function(){
-    if(this.scrollY > 30)
+$(window).scroll(function(){
+
+    let aboutOffset = $('#about').offset().top;
+    let contactOffset = $('#contact').offset().top;
+
+    if($(window).scrollTop() > 200)
     {
-        navbar.classList.add('sticky');
-        collapse.classList.add('bg-trans');
+        $('.navbar').css({'backgroundColor' : 'rgba(0, 0, 0, 0.85)', 'transition' : '0.5s'});
+        $('.navbar-collapse').css({'backgroundColor' : 'transparent', 'transition' : '0.5s'});
     }
     else
     {
-        navbar.classList.remove('sticky');
-        collapse.classList.remove('bg-trans');
+        $('.navbar').css({'backgroundColor' : 'transparent', 'transition' : '0.5s'});
+        $('.navbar-collapse').css({'backgroundColor' : 'rgba(0, 0, 0, 0.85)', 'transition' : '0.5s'});
+    }
+    if($(window).scrollTop() > aboutOffset && $(window).scrollTop() < contactOffset-250)
+    {
+        $('#topBtn').fadeIn(500);
+    }
+    else
+    {
+        $('#topBtn').fadeOut(250);
     }
 })
 
 
-// rotation location colors container.... 
-
-let right = colorShow.style.right = '-265px';
-
-rotation.addEventListener('click', function(e){
-    e.preventDefault();
-    right =! right;
-    if(right)
-    {
-        colorShow.style.right = '0px';
-    }
-    else
-    {
-        colorShow.style.right = '-265px';
-    }
+$('#topBtn').click(function(){
+    $('html , body').animate({scrollTop : 0}, 500);
 })
+
+
+
+// add class active to an active link and smooth move.....
+
+$('.navbar-nav .nav-item a').click(function(){
+    $(this).addClass('active');
+    $(this).parent().siblings().children().removeClass('active');
+    let currentSection = $(this).attr('href');
+    let currentOffset = $(currentSection).offset().top;
+    $('html , body').animate({scrollTop : currentOffset}, 500);
+})
+
 
 
 // Auto typing...
 
-// let typed = new typed('.typing' , {
-//     Strings : ["Developer" , "Designer" , "Freelancer"],
-//     typeSpeed : 100,
-//     backSpeed : 60,
-//     loop : true
-// });
+let typed = new Typed('.element', {
+    strings : ['Frontend Developer.', 'Frontend Designer.', 'Freelancer.'],
+    typeSpeed : 100,
+    backSpeed : 50,
+    loop : true
+});
+
+let autoTyped = new Typed('.typing', {
+    strings : ['Frontend Developer.', 'Frontend Designer.', 'Freelancer.'],
+    typeSpeed : 100,
+    backSpeed : 50,
+    loop : true
+});
+
 
 
 // when user press on send message button...
@@ -139,7 +160,6 @@ function sendValidMessage(){
         resetForm();
     }
 }
-
 
 
 
@@ -246,3 +266,6 @@ function resetForm(){
         alertMessage.classList.add('d-none');
     }
 }
+
+
+

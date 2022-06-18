@@ -6,6 +6,24 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+#loading{
+    z-index: 99999;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--mainColor);
+    background-color: var(--secondColor);
+}
+
+#topBtn{
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
 }
 
 /* change colors */
@@ -49,42 +67,6 @@ body{
     100% {transform: rotate(360deg);}
 }
 
-.blue{
-    background-color: #4169e1;
-}
-.green{
-    background-color: #66b95c;
-}
-.brown{
-    background-color: #ff9800;
-}
-.pink{
-    background-color: #ff5e94;
-}
-.orange{
-    background-color: #fa5b0f;
-}
-.black{
-    background-color: #333;
-}
-.purple{
-    background-color: #9200ee;
-}
-.sky{
-    background-color: #00d4bd;
-}
-.cadetBlue{
-    background-color: #5e9e9f;
-}
-.crim{
-    background-color: #e65f78;
-}
-.olive{
-    background-color: #666d41;
-}
-.red{
-    background-color: #fe0000;
-}
 .defult{
     background-color: crimson;
     border: none;
@@ -151,9 +133,6 @@ nav{
 .navbar, .navbar-brand{
     transition: all 0.25s;
 }
-.sticky{
-    background-color:var(--secondColor)  !important;
-}
 .navbar-brand:hover{
     color: var(--mainColor);
 }
@@ -189,12 +168,6 @@ nav{
 .navbar-collapse{
     background-color: var(--secondColor);
 }
-.bg-trans{
-    background-color: transparent !important;
-}
-/* .navbar-collapse .navbar-nav{
-    width: 100% !important;
-} */
 .title-header img{
     width: 25%;
 }
@@ -209,9 +182,6 @@ nav{
     border-radius: 50%;
     transition: all 0.5s;
 }
-/* .typing{
-    transition: all 0.25s !important;
-} */
 
 /* social icons.. */
 .fa-facebook-f:hover{
@@ -530,42 +500,42 @@ nav{
 /* ...Responsive section skills... */
 @media screen and (min-width:1200px) and (max-width:1400px){
     .skills .main-title h6:before{
-        left: 43.75%;
+        left: 43.5%;
     }
     .skills .main-title h6:after{
-        right: 43.75%;
+        right: 43.5%;
     }
 }
 @media screen and (min-width:992px) and (max-width:1200px){
     .skills .main-title h6:before{
-        left: 42.5%;
+        left: 42.25%;
     }
     .skills .main-title h6:after{
-        right: 42.5%;
+        right: 42.25%;
     }
 }
 @media screen and (min-width:768px) and (max-width:992px){
     .skills .main-title h6:before{
-        left: 40%;
+        left: 39.75%;
     }
     .skills .main-title h6:after{
-        right: 40%;
+        right: 39.75%;
     }
 }
 @media screen and (min-width:600px) and (max-width:768px){
     .skills .main-title h6:before{
-        left: 36.75%;
+        left: 36.5%;
     }
     .skills .main-title h6:after{
-        right: 36.75%;
+        right: 36.5%;
     }
 }
 @media screen and (max-width:600px){
     .skills .main-title h6:before{
-        left: 36%;
+        left: 35.25%;
     }
     .skills .main-title h6:after{
-        right: 36%;
+        right: 35.25%;
     }
 }
 
