@@ -130,6 +130,9 @@ nav{
     font-family: 'Oleo Script', cursive;
     letter-spacing: 0.125rem;
 }
+.navbar-brand{
+    cursor: pointer;
+}
 .navbar, .navbar-brand{
     transition: all 0.25s;
 }
