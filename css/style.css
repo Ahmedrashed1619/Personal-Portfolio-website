@@ -9,6 +9,12 @@ body{
     overflow: hidden;
 }
 
+@media screen and (max-width: 500px) {
+    h6:after, h6:before{
+        display: none !important;
+    }
+}
+
 #loading{
     z-index: 99999;
     position: fixed;
