@@ -66,7 +66,7 @@
       <div class="container">
          <div class="title-header text-white mt-5 d-flex justify-content-center align-items-center flex-column">
             <img src="img/img4.jpg" class="mx-auto my-3 rounded-circle" alt="Ahmed Rashed">
-            <h4 class="mb-0">Hello,my name is</h4>
+            <h4 class="mb-0">Hello.. my name is</h4>
             <h1 class="fs-h1">Ahmed Rashed</h1>
             <h3 class="m3-2">And I'm a <span class="main-color fw-bold element"></span></h3>
             <a href="#contact" class="btn main-bg text-white text-decoration-none px-2 my-2"><i class="fa-solid fa-paper-plane me-2"></i> Hire me</a>
@@ -391,6 +391,16 @@
             </div>
             <div class="col-lg-6 col-xxl-4">
                <div class="product bg-dark py-4 px-2">
+                  <a href="https://ahmedrashed1619.github.io/Egyptian-Party/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Egyptian-Party.png" class="w-100" alt="Egyptian-Party">
+                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
+                        <h3 class="my-3 fw-bold main-color">Egyptian Party</h3>
+                        <p contenteditable="true" spellcheck="true" class="lh-lg"><span>Egyptian Party</span> is a simple and Valid product to reserve a ticket for the Party and display the time remaining to start Using <br><span>HTML</span> , <span>Css</span> , <span>Bootstrap</span> and <span>Javascript</span><br><span>(jQuery - RegExp - Responsive 100%)</span></p>
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4">
+               <div class="product bg-dark py-4 px-2">
                   <a href="https://ahmedrashed1619.github.io/Earth-Slider-Quotes/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Earth Quotes.png" class="w-100" alt="Earth Slider Quotes">
                      <div class="product-title d-flex justify-content-center align-items-center flex-column">
                         <h3 class="my-3 fw-bold main-color">Earth Slider Quotes</h3>
@@ -523,17 +533,18 @@
                <form class="form-cont" action="#" method="">
                   <div class="input mb-4">
                      <input id="name" type="text" name="data[name]" class="form-control" placeholder="Name " required>
-                     <div id="alertName" class="alert alert-danger p-1 text-center d-none mx-auto my-2 ">Should be consisting of a capital letter and 2-15 small letters.</div>
+                     <div id="alertName" class="alert alert-danger p-1 text-center mx-auto my-2 ">Should be consisting of a capital letter and 2-15 small letters.</div>
                   </div>
                   <div class="input mb-4">
                      <input id="email" type="email" name="data[email]" class="form-control" placeholder="Email " required>
-                     <div id="alertEmail" class="alert alert-danger p-1 text-center d-none mx-auto my-2">Should be consisting of 3-15 characters and end with (@gmail.com).</div>
+                     <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto my-2">Should be consisting of 3-15 characters and end with (@gmail.com).</div>
                   </div>
                   <div class="input mb-2">
-                     <textarea id="message" class="form-control" name="data[message]" rows="3" placeholder="Message " required></textarea>
-                     <div id="alertMessage" class="alert alert-danger p-1 text-center d-none mx-auto my-2">Should be consisting of 5-150 characters.</div>
+                     <textarea id="message" class="form-control" name="data[message]" maxlength="150" rows="3" placeholder="Message " required></textarea>
+                     <p class="count mb-0"><span id="counter"></span> : Counter</p>
+                     <div id="alertMessage" class="alert alert-danger p-1 text-center mx-auto mt-0 mb-2">Must not exceed 150 characters.</div>
                   </div>
-                  <p id="alertSend" class="fs-6 d-none mb-0 w-50 text-center mx-auto"></p>
+                  <p id="alertSend" class="fs-6 mb-0 w-50 text-center mx-auto"></p>
                   <button id="sendMessage" type="submit" class="btn main-bg text-white text-decoration-none px-2 py-2 mt-3 me-2"><i class="fa-solid fa-paper-plane me-3"></i> Send message</button>
                   <button id="reset" class="btn main-bg text-white py-2 mt-3 ms-2"><i class="fa-solid fa-rotate-left me-2"></i>Reset Form</button>
                </form>

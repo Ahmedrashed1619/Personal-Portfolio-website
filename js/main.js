@@ -1,18 +1,4 @@
 
-//....................Form Selectors...................
-
-let inputs = Array.from(document.querySelectorAll('.form-control'))
-let inputName = document.getElementById('name');
-let inputEmail = document.getElementById('email');
-let inputMessage = document.getElementById('message');
-let alertName = document.getElementById('alertName');
-let alertEmail = document.getElementById('alertEmail');
-let alertMessage = document.getElementById('alertMessage');
-let sendMessage = document.getElementById('sendMessage');
-let resetBtn = document.getElementById('reset');
-let alertSend = document.getElementById('alertSend');
-
-
 // loading to init...........
 
 $(document).ready(function(){
@@ -130,40 +116,37 @@ let autoTyped = new Typed('.typing', {
 
 // when user press on send message button...
 
-if(sendMessage){
-    sendMessage.addEventListener('click' , sendValidMessage);
-}
+$('#sendMessage').click(function(){
+    sendValidMessage();
+})
+
+// validation message...
 
 function sendValidMessage(){
     if(isInputEmpty() != true && validUserName() == true && validUserEmail() == true && validTextMessage() == true)
     {
-        alertSend.innerHTML = ('The message was sent Successfully');
-        alertSend.classList.replace('d-none','d-block');
-        alertSend.classList.add('text-success');
-        alertSend.classList.remove('text-danger');
+        $('#alertSend').html('The message was sent Successfully');
+        $('#alertSend').css({'display':'block' , 'color':'green'});
         resetForm();
     }
     else if (isInputEmpty())
     {
-        alertSend.innerHTML = ('all fields are important.. You should fill them correctly');
-        alertSend.classList.replace('d-none','d-block');
-        alertSend.classList.add('text-danger');
-        alertSend.classList.remove('text-success');
+        $('#alertSend').html('all fields are important.. You should fill them correctly');
+        $('#alertSend').css({'display':'block' , 'color':'red'});
         resetForm();
     }
     else if(validUserName() == false || validUserEmail() == false || validTextMessage() == false)
     {
-        alertSend.innerHTML = ('There are Invalid fields.. You should fill them correctly');
-        alertSend.classList.replace('d-none','d-block');
-        alertSend.classList.add('text-danger');
-        alertSend.classList.remove('text-success');
+        $('#alertSend').html('There are Invalid fields.. You should fill them correctly');
+        $('#alertSend').css({'display':'block' , 'color':'red'});
         resetForm();
     }
 }
 
 
-
 // ...check if inputs are empty...
+
+let inputs = Array.from($('.form-control'));
 
 function isInputEmpty(){
     for(var i = 0; i < inputs.length; i++){
@@ -180,92 +163,125 @@ function isInputEmpty(){
 
 // when user want to send a message...
 
-if(inputName != null){
-    inputName.addEventListener('input' , validUserName);
+if($('#name') != null){
+    $('#name').on('input' , function(){
+        validUserName();
+    })
 }
 
-if(inputEmail != null){
-    inputEmail.addEventListener('input' , validUserEmail);
+if($('#email') != null){
+    $('#email').on('input' , function(){
+        validUserEmail();
+    })
 }
 
-if(inputMessage != null){
-    inputMessage.addEventListener('input' , validTextMessage);
+if($('#message') != null){
+    $('#message').on('input' , function(){
+        validTextMessage();
+    })
 }
+
 
 // Validation for form...
 
 function validUserName(){
-    var regexName = /^[A-Z][a-z- ]{2,15}$/;
-    if(regexName.test(inputName.value))
+    let regexName = /^[A-Z][a-z- ]{2,15}$/;
+
+    if(regexName.test($('#name').val()))
     {
-        inputName.classList.add('is-valid');
-        inputName.classList.remove('is-invalid');
-        alertName.classList.add('d-none');
+        $('#name').addClass('is-valid');
+        $('#name').removeClass('is-invalid');
+        $('#alertName').css('display' , 'none');
         return true;
     }
     else
     {
-        inputName.classList.add('is-invalid');
-        inputName.classList.remove('is-valid');
-        alertName.classList.remove('d-none');
+        $('#name').addClass('is-invalid');
+        $('#name').removeClass('is-valid');
+        $('#alertName').css('display' , 'block');
         return false;
     }
 }
+
 
 function validUserEmail(){
-    var regexEmail = /^[a-zA-Z0-9_]{3,15}@gmail\.com$/;
-    if(regexEmail.test(inputEmail.value))
+    let regexEmail = /^[a-zA-Z0-9_]{3,15}@gmail\.com$/;
+
+    if(regexEmail.test($('#email').val()))
     {
-        inputEmail.classList.add('is-valid');
-        inputEmail.classList.remove('is-invalid');
-        alertEmail.classList.add('d-none');
+        $('#email').addClass('is-valid');
+        $('#email').removeClass('is-invalid');
+        $('#alertEmail').css('display' , 'none');
         return true;
     }
     else
     {
-        inputEmail.classList.add('is-invalid');
-        inputEmail.classList.remove('is-valid');
-        alertEmail.classList.remove('d-none');
+        $('#email').addClass('is-invalid');
+        $('#email').removeClass('is-valid');
+        $('#alertEmail').css('display' , 'block');
         return false;
     }
 }
+
 
 function validTextMessage(){
-    var regexName = /^[a-zA-Z0-9- ]{5,150}$/;
-    if(regexName.test(inputMessage.value))
+    let regexMsg = /^[a-zA-Z0-9- ]{1,150}$/;
+
+    if(regexMsg.test($('#message').val()))
     {
-        inputMessage.classList.add('is-valid');
-        inputMessage.classList.remove('is-invalid');
-        alertMessage.classList.add('d-none');
+        $('#message').addClass('is-valid');
+        $('#message').removeClass('is-invalid');
+        $('#alertMessage').css('display' , 'none');
         return true;
     }
     else
     {
-        inputMessage.classList.add('is-invalid');
-        inputMessage.classList.remove('is-valid');
-        alertMessage.classList.remove('d-none');
+        $('#message').addClass('is-invalid');
+        $('#message').removeClass('is-valid');
+        $('#alertMessage').css('display' , 'block');
         return false;
     }
 }
-
 
 
 // when user want to reset message form..
-if(resetBtn){
-    resetBtn.addEventListener('click' , resetForm);
-}
+
+$('#reset').click(function(){
+    resetForm();
+})
 
 //... reset Messages form...
+
 function resetForm(){
     for(var i = 0; i < inputs.length; i++){
         inputs[i].value = '';
         inputs[i].classList.remove('is-valid');
         inputs[i].classList.remove('is-invalid');
-        alertName.classList.add('d-none');
-        alertEmail.classList.add('d-none');
-        alertMessage.classList.add('d-none');
+        $('#alertName').css('display' , 'none');
+        $('#alertEmail').css('display' , 'none');
+        $('#alertMessage').css('display' , 'none');
     }
+    $('#counter').html(150);
 }
 
 
+// counter character
+
+let counter = $('#message').attr('maxlength');
+$('#counter').html(counter);
+
+$('#message').on('input' , function (){
+    let changeCount = $('#message').val().length;
+    let endCounter = 150 - changeCount;
+    $('#counter').html(endCounter);
+    
+    if(endCounter == 0)
+    {
+        $('#counter').css({'fontWeight' : 'bold' , 'color' : 'red'});
+    }
+    else
+    {
+        $('#counter').css({'fontWeight' : 'normal' , 'color' : 'black'});
+    }
+});
 

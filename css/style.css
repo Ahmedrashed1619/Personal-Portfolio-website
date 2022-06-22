@@ -355,6 +355,11 @@ nav{
     .main-title h6:after{
         right: 37%;
     }
+    .cont-about .col-lg-6{
+        width: 85%;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 
@@ -459,7 +464,13 @@ nav{
         right: 32.75%;
     }
 }
-
+@media screen and (max-width: 600px) {
+    .services .service , .portfolio .product , .contact .col-lg-6{
+        width: 85%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
 
 
 /* ....section Skills.... */
@@ -590,7 +601,7 @@ nav{
     transition: all 0.75s 0.3s;
 }
 .portfolio .product:hover .product-title{
-    top: 0;
+    top: 6px;
     opacity: 1;
 }
 
@@ -635,7 +646,22 @@ textarea{
     box-shadow: none;
     border-color: var(--mainColor) !important;
 }
-
+.count{
+    padding: 0.5rem;
+    text-align: right;
+}
+#alertSend{
+    display: none;
+}
+#alertName{
+    display: none;
+}
+#alertEmail{
+    display: none;
+}
+#alertMessage{
+    display: none;
+}
 
 
 /* ...Responsive section contact... */
