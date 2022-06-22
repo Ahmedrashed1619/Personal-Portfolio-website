@@ -262,6 +262,7 @@ nav{
 .about-img{
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
 }
 .layer-img{
     position: absolute;
