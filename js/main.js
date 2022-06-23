@@ -205,7 +205,7 @@ function validUserName(){
 
 
 function validUserEmail(){
-    let regexEmail = /^[a-zA-Z0-9_]{3,15}@gmail\.com$/;
+    let regexEmail = /^[a-zA-Z0-9_]{3,15}@([a-z]{2,8}\.com)$/;
 
     if(regexEmail.test($('#email').val()))
     {
