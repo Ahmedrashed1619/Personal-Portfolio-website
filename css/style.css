@@ -163,12 +163,55 @@ nav{
     color: #fff !important;
 }
 .navbar .navbar-toggler{
-    color: #fff;
+    /* color: #fff; */
     transition: all 0.25s;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.navbar button svg{
+.navbar .navbar-toggler{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .navbar-toggler::before{
+    content: '';
+    position: absolute;
+    width: 25px !important;
+    height: 3.5px !important;
+    background-color: #fff;
+    transition: all 0.2s;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 0 #fff;
+}
+.navbar .navbar-toggler.convert::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+}
+.navbar .navbar-toggler::after{
+    content: '';
+    position: absolute;
+    width: 25px !important;
+    height: 3.5px !important;
+    background-color: #fff;
+    transition: all 0.2s;
+    transform: translateY(10px);
+}
+.navbar .navbar-toggler.convert::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+/* .navbar button svg{
     font-size: 1.5rem !important;
-}
+} */
 .navbar .navbar-toggler:focus,
  .navbar .navbar-toggler:hover
 {

@@ -78,10 +78,15 @@ $(window).scroll(function(){
 })
 
 
+// when click event on topbtn & toggle 
+
 $('#topBtn').click(function(){
     $('html , body').animate({scrollTop : 0}, 500);
 })
 
+$('.navbar .navbar-toggler').click(()=>{
+    $('.navbar .navbar-toggler').toggleClass('convert');
+})
 
 
 // add class active to an active link and smooth move.....
