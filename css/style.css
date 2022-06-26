@@ -130,7 +130,6 @@ body{
 }
 
 
-
 /* navbar.. */
 nav{
     font-family: 'Oleo Script', cursive;
@@ -163,22 +162,12 @@ nav{
     color: #fff !important;
 }
 .navbar .navbar-toggler{
-    /* color: #fff; */
-    transition: all 0.25s;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navbar .navbar-toggler{
-    position: relative;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
     transition: all 0.2s;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,7 +176,7 @@ nav{
     content: '';
     position: absolute;
     width: 25px !important;
-    height: 3.5px !important;
+    height: 3.75px !important;
     background-color: #fff;
     transition: all 0.2s;
     transform: translateY(-10px);
@@ -201,7 +190,7 @@ nav{
     content: '';
     position: absolute;
     width: 25px !important;
-    height: 3.5px !important;
+    height: 3.75px !important;
     background-color: #fff;
     transition: all 0.2s;
     transform: translateY(10px);
@@ -209,9 +198,6 @@ nav{
 .navbar .navbar-toggler.convert::after{
     transform: translateY(0px) rotate(-45deg);
 }
-/* .navbar button svg{
-    font-size: 1.5rem !important;
-} */
 .navbar .navbar-toggler:focus,
  .navbar .navbar-toggler:hover
 {
@@ -271,6 +257,9 @@ nav{
         justify-content: space-evenly !important;
         align-items: center !important;
     }
+    .navbar .navbar-toggler{
+        display: none;
+    }
 }
 @media screen and (max-width:768px) {
     .fs-h1{
@@ -287,6 +276,11 @@ nav{
     }
     .navbar .navbar-toggler{
         margin-left: auto !important;
+    }
+}
+@media screen and (max-width: 991px) {
+    .navbar .navbar-toggler{
+        display: block;
     }
 }
 @media screen and (min-width:768px) and (max-width:992px) {
