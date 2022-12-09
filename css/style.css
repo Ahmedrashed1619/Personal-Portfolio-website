@@ -1,0 +1,764 @@
+
+:root{
+    --mainColor :crimson;
+    --secondColor:rgba(0, 0, 0, 0.8);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+    h6:after, h6:before{
+        display: none !important;
+    }
+}
+
+#loading{
+    z-index: 99999;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--mainColor);
+    background-color: var(--secondColor);
+}
+
+#topBtn{
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
+}
+
+/* change colors */
+.colors{
+    width: 265px;
+    z-index: 1000;
+    top : 25%;
+    right: -265px;
+    position: fixed !important;
+    position: relative;
+    transition: all 0.75s;
+}
+.colors .screen-show h5{
+    border-bottom: solid 1px #999;
+    text-shadow: 0 0 10px;
+}
+.screen-show ul li{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.screen-show > a{
+    position: absolute;
+    top: 0;
+    left: -53px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.screen-show > a svg{
+    position: relative;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.defult{
+    background-color: crimson;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+/* section header (Home) */
+.header{
+    background-image: url(../img/pexels-eberhard-grossgasteiger-1624496.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.caption{
+    background-color: rgba(0, 0, 0, 0.650);
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
+}
+.fs-h1{
+    font-size: 5rem;
+}
+.main-color{
+    color: var(--mainColor);
+}
+.main-bg{
+    background-color: var(--mainColor);
+}
+.second-color{
+    color: var(--secondColor);
+}
+.second-bg{
+    background-color: var(--secondColor);
+}
+.bg-simeBlack{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.btn:focus{
+    box-shadow: none !important;
+}
+
+/* animation */
+.title-header .move{
+    position: relative;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes move {
+    0% {top: 0px}
+    100% {top: 60px}
+}
+
+
+/* navbar.. */
+nav{
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
+}
+.navbar-brand{
+    cursor: pointer;
+}
+.navbar, .navbar-brand{
+    transition: all 0.25s;
+}
+.navbar-brand:hover{
+    color: var(--mainColor);
+}
+.navbar-nav a{
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.25s;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    font-weight: bold;
+}
+.active,
+ .navbar-nav a:focus,
+  .navbar-nav a:hover
+{
+    color: var(--mainColor) !important;
+}
+.white-color{
+    color: #fff !important;
+}
+.navbar .navbar-toggler{
+    transition: all 0.2s;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .navbar-toggler::before{
+    content: '';
+    position: absolute;
+    width: 25px !important;
+    height: 3.75px !important;
+    background-color: #fff;
+    transition: all 0.2s;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 0 #fff;
+}
+.navbar .navbar-toggler.convert::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+}
+.navbar .navbar-toggler::after{
+    content: '';
+    position: absolute;
+    width: 25px !important;
+    height: 3.75px !important;
+    background-color: #fff;
+    transition: all 0.2s;
+    transform: translateY(10px);
+}
+.navbar .navbar-toggler.convert::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+.navbar .navbar-toggler:focus,
+ .navbar .navbar-toggler:hover
+{
+    box-shadow: none;
+}
+.navbar-collapse{
+    background-color: var(--secondColor);
+}
+.title-header img{
+    width: 25%;
+}
+.my-links .links {
+    list-style-type: none;
+}
+.links a svg{
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+/* social icons.. */
+.fa-facebook-f:hover{
+    background-color: #1877f2;
+}
+.fa-instagram:hover{
+    background-color: #e1306c;
+}
+.fa-twitter:hover{
+    background-color: #1da1f2;
+}
+.fa-linkedin-in:hover{
+    background-color: #0077b5;
+}
+.fa-github:hover{
+    background-color: #6e5494;
+}
+
+/* Responsive section home.. */
+@media screen and (min-width: 992px){
+    .navbar-collapse{
+        background-color: transparent !important;
+    }
+    .navbar-collapse .navbar-nav{
+        width: 70% !important;
+    }
+    .navbar-nav a{
+        margin-bottom: 0;
+    }
+    .title-header img{
+        width: 15%;
+    }
+    .my-links .links {
+        display: flex !important;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+    }
+    .navbar .navbar-toggler{
+        display: none;
+    }
+}
+@media screen and (max-width:768px) {
+    .fs-h1{
+        font-size: 3.5rem;
+    }
+    .title-header .move{
+        animation: none;
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    .my-links .links {
+        display: none !important;
+    }
+    .navbar .navbar-toggler{
+        margin-left: auto !important;
+    }
+}
+@media screen and (max-width: 991px) {
+    .navbar .navbar-toggler{
+        display: block;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    .fs-h1{
+        font-size: 4rem;
+    }
+}
+
+
+
+/* ...section About... */
+.about-img img{
+    box-shadow: 0px 5px 50px rgb(0 0 0 / 50%);
+    border-radius: 10px;
+}
+.about-img{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.layer-img{
+    position: absolute;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--secondColor);
+    cursor: pointer;
+    transition: all 0.75s;
+}
+.about-img:hover .layer-img{
+    opacity: 1;
+    top: 0;
+}
+.about .main-title{
+    position: relative;
+}
+.main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 45%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 45%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.about-title h4{
+    font-family: 'Oleo Script', cursive;
+    letter-spacing: 0.125rem;
+}
+.about-title p a{
+    transition: all 0.25s;
+}
+.about-title p a:hover{
+    color: var(--mainColor) !important;
+}
+
+/* ...Responsive section about... */
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .main-title h6:before{
+        left: 44%;
+    }
+    .main-title h6:after{
+        right: 44%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .main-title h6:before{
+        left: 43%;
+    }
+    .main-title h6:after{
+        right: 43%;
+    }
+    .about-title h4 .last-span{
+        font-size: 1.35rem !important;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .main-title h6:before{
+        left: 41%;
+    }
+    .main-title h6:after{
+        right: 41%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .main-title h6:before{
+        left: 38%;
+    }
+    .main-title h6:after{
+        right: 38%;
+    }
+}
+@media screen and (max-width:600px){
+    .main-title h6:before{
+        left: 37%;
+    }
+    .main-title h6:after{
+        right: 37%;
+    }
+}
+
+
+/* ....section Services.... */
+.services{
+    background-image: url(../img/pexels-djordje-petrovic-2102416.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ...sections services & porfolio (after & before)... */
+
+.services .main-title, .portfolio .main-title{
+    position: relative;
+}
+.services .main-title h6:before, .portfolio .main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 43.5%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.25px;
+    background-color: #fff;
+}
+.services .main-title h6:after, .portfolio .main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 43.5%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.25px;
+    background-color: #fff;
+}
+
+
+.services .service{
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px rgb(0 0 0 / 50%);
+    transition:  all 0.25s;
+    cursor: pointer;
+}
+.services .service svg{
+    transition: all 0.5s;
+}
+.services .service p span{
+    transition: all 0.5s;
+}
+.services .service:hover{
+    background-color: var(--mainColor) !important;
+}
+.services .service:hover svg{
+    color: #fff !important;
+}
+.services .service:hover p span{
+    color: #fff !important;
+}
+
+/* ...Responsive sections services & portfolio (after & before)... */
+
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .services .main-title h6:before, .portfolio .main-title h6:before{
+        left: 42.5%;
+    }
+    .services .main-title h6:after, .portfolio .main-title h6:after{
+        right: 42.5%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .services .main-title h6:before, .portfolio .main-title h6:before{
+        left: 41%;
+    }
+    .services .main-title h6:after, .portfolio .main-title h6:after{
+        right: 41%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .services .main-title h6:before, .portfolio .main-title h6:before{
+        left: 38%;
+    }
+    .services .main-title h6:after, .portfolio .main-title h6:after{
+        right: 38%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .services .main-title h6:before, .portfolio .main-title h6:before{
+        left: 34%;
+    }
+    .services .main-title h6:after, .portfolio .main-title h6:after{
+        right: 34%;
+    }
+}
+@media screen and (max-width:600px){
+    .services .main-title h6:before, .portfolio .main-title h6:before{
+        left: 32.75%;
+    }
+    .services .main-title h6:after, .portfolio .main-title h6:after{
+        right: 32.75%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .services .service , .portfolio .product , .contact .col-lg-6{
+        width: 85%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+
+/* ....section Skills.... */
+.skills .main-title{
+    position: relative;
+}
+.skills .main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 44.5%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.skills .main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 44.5%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.w-65{
+    width: 65%;
+}
+.w-80{
+    width: 80%;
+}
+.w-85{
+    width: 85%;
+}
+.w-90{
+    width: 90%;
+}
+.parent{
+    margin: 1.5rem auto;
+    width: 85%;
+}
+.progress-bar{
+    background-color: var(--mainColor);
+}
+
+/* ...Responsive section skills... */
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .skills .main-title h6:before{
+        left: 43.5%;
+    }
+    .skills .main-title h6:after{
+        right: 43.5%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .skills .main-title h6:before{
+        left: 42.25%;
+    }
+    .skills .main-title h6:after{
+        right: 42.25%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .skills .main-title h6:before{
+        left: 39.75%;
+    }
+    .skills .main-title h6:after{
+        right: 39.75%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .skills .main-title h6:before{
+        left: 36.5%;
+    }
+    .skills .main-title h6:after{
+        right: 36.5%;
+    }
+}
+@media screen and (max-width:600px){
+    .skills .main-title h6:before{
+        left: 35.25%;
+    }
+    .skills .main-title h6:after{
+        right: 35.25%;
+    }
+}
+
+
+/* ...section portfolio... */
+.portfolio{
+    background-image: url(../img/bg-header.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.portfolio .product{
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px rgb(0 0 0 / 50%);
+    overflow: hidden;
+    position: relative;
+}
+.portfolio .product img{
+    height: 300px;
+    border-radius: 5px;
+    transition: all 1s;
+}
+.portfolio .product:hover img{
+    transform: scale(1.1 , 1.1);
+}
+.portfolio .product p span{
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.portfolio .product p span:hover{
+    color: var(--mainColor);
+}
+.portfolio .product .product-title{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.75s 0.3s;
+}
+.portfolio .product:hover .product-title{
+    top: 6px;
+    opacity: 1;
+}
+
+
+/* ...section contact... */
+.contact .main-title{
+    position: relative;
+}
+.contact .main-title h6:before{
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 44.5%;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.contact .main-title h6:after{
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 44.5%;
+    transform: translatex(50%);
+    width: 40px;
+    height: 2.5px;
+    background-color: #000;
+}
+.contact .info h6{
+    margin-bottom: 3px;
+}
+.contact .info a{
+    transition: all 0.25s;
+}
+.contact .info a:hover{
+    color: var(--mainColor) !important;
+}
+textarea{
+    resize: none;
+}
+.form-control:focus{
+    box-shadow: none;
+    border-color: var(--mainColor) !important;
+}
+.count{
+    padding: 0.5rem;
+    text-align: right;
+}
+#alertSend{
+    display: none;
+}
+#alertName{
+    display: none;
+}
+#alertEmail{
+    display: none;
+}
+#alertMessage{
+    display: none;
+}
+
+
+/* ...Responsive section contact... */
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .contact .main-title h6:before{
+        left: 43.5%;
+    }
+    .contact .main-title h6:after{
+        right: 43.5%;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+    .contact .main-title h6:before{
+        left: 42.25%;
+    }
+    .contact .main-title h6:after{
+        right: 42.25%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .contact .main-title h6:before{
+        left: 39.5%;
+    }
+    .contact .main-title h6:after{
+        right: 39.5%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:768px){
+    .contact .main-title h6:before{
+        left: 36.25%;
+    }
+    .contact .main-title h6:after{
+        right: 36.25%;
+    }
+}
+@media screen and (max-width:600px){
+    .contact .main-title h6:before{
+        left: 34.75%;
+    }
+    .contact .main-title h6:after{
+        right: 34.75%;
+    }
+}
+
+
+/* ...Footer... */
+.copy-right a{
+    transition: all 0.25s;
+    text-decoration: none;
+}
+.copy-right a:hover{
+    color: var(--mainColor);
+}
+
+/* ...responsive footer... */
+@media screen and (max-width:992px){
+    .cont-footer{
+        padding-top: 1.5rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    .copy-right{
+        width: 75% !important;
+        margin: auto !important;
+    }
+    .footer .links{
+        margin: 0.125rem auto !important;
+    }
+}
