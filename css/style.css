@@ -762,3 +762,18 @@ textarea{
         margin: 0.125rem auto !important;
     }
 }
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mainColor) !important;
+    border-radius: 40px !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--white) !important;
+    border-radius: 20px !important;
+}
