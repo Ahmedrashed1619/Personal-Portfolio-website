@@ -9,6 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta anme="author" content="AHMED RASHED" />
       <title>Ahmed Rashed Portfolio</title>
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
       <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500&family=Alegreya:wght@500&family=Inspiration&family=Lobster&family=Oleo+Script&family=Oleo+Script+Swash+Caps:wght@700&family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@600;900&family=Ubuntu:wght@400;500;700&family=Yeseva+One&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -233,12 +234,12 @@
             <div class="col-lg-6">
                <div class="progs">
                   <div class="parent">
-                     <div class="w-85 fw-bold d-flex justify-content-between align-items-center mb-1">
+                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
                         <span>Web Design</span>
-                        <span>85%</span>
+                        <span>90%</span>
                      </div>
                      <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                      </div>
                   </div>
                   <div class="parent">
@@ -669,20 +670,19 @@
             </div>
             <div class="col-lg-6">
                <h4 class="fw-bold mb-4">Message me</h4>
-               <form class="form-cont"
-               >
+               <form class="form-cont" id="contact-form">
                   <div class="input mb-4">
                      <input id="name" type="text" name="data[name]" class="form-control" placeholder="Name " required>
                      <div id="alertName" class="alert alert-danger p-1 text-center mx-auto my-2 ">Should be consisting of a capital letter and 2-15 small letters.</div>
                   </div>
                   <div class="input mb-4">
                      <input id="email" type="email" name="data[email]" class="form-control" placeholder="Email " required>
-                     <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto my-2">Should be consisting of 3-15 characters and end with (@"Domain name".com).</div>
+                     <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto my-2">Should be valid email.</div>
                   </div>
                   <div class="input mb-2">
-                     <textarea id="message" class="form-control" name="data[message]" maxlength="150" rows="3" placeholder="Message " required></textarea>
+                     <textarea id="message" class="form-control" name="data[message]" maxlength="200" rows="3" placeholder="Message " required></textarea>
                      <p class="count mb-0"><span id="counter"></span> : Counter</p>
-                     <div id="alertMessage" class="alert alert-danger p-1 text-center mx-auto mt-0 mb-2">Must not exceed 150 characters.</div>
+                     <div id="alertMessage" class="alert alert-danger p-1 text-center mx-auto mt-0 mb-2">Must not exceed 200 characters.</div>
                   </div>
                   <p id="alertSend" class="fs-6 mb-0 w-50 text-center mx-auto"></p>
                   <button id="sendMessage" type="submit" class="btn main-bg text-white text-decoration-none px-2 py-2 mt-3 me-2"><i class="fa-solid fa-paper-plane me-3"></i> Send message</button>

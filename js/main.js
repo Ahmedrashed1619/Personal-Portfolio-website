@@ -130,8 +130,22 @@ $('#sendMessage').click(function(){
 function sendValidMessage(){
     if(isInputEmpty() != true && validUserName() == true && validUserEmail() == true && validTextMessage() == true)
     {
-        $('#alertSend').html('The message was sent Successfully');
-        $('#alertSend').css({'display':'block' , 'color':'green'});
+
+        const templateParams = {
+            from_name: $('#name').val(),
+            from_email: $('#email').val(),
+            to_name: "Ahmmed Rashed",
+            message: $('#message').val(),
+        };
+
+        emailjs.send('service_5kj2f8m', 'template_pso98ed', templateParams, 'KrqnbuW9dXkylO-sJ')
+            .then(function(res) {
+                $('#alertSend').html('Your email has been sent successfully');
+                $('#alertSend').css({'display':'block' , 'color':'green'});
+            },function(error) {
+                $('#alertSend').html('Failed to send email, please try again.');
+                $('#alertSend').css({'display':'block' , 'color':'red'});
+            });
         resetForm();
     }
     else if (isInputEmpty())
@@ -210,7 +224,7 @@ function validUserName(){
 
 
 function validUserEmail(){
-    let regexEmail = /^[a-zA-Z0-9_]{3,15}(@[a-zA-Z0-9]{3,15}\.com)$/;
+    let regexEmail = /^[a-zA-Z0-9.!#$%&'*+=?^_]{3,25}(@[a-zA-Z0-9]{3,25}\.[a-zA-Z0-9.!#$%&'*+=?^_]{3,25})$/;
 
     if(regexEmail.test($('#email').val()))
     {
@@ -230,7 +244,7 @@ function validUserEmail(){
 
 
 function validTextMessage(){
-    let regexMsg = /^[a-zA-Z0-9- ]{1,150}$/;
+    let regexMsg = /^[a-zA-Z0-9- ]{1,200}$/;
 
     if(regexMsg.test($('#message').val()))
     {
@@ -266,7 +280,7 @@ function resetForm(){
         $('#alertEmail').css('display' , 'none');
         $('#alertMessage').css('display' , 'none');
     }
-    $('#counter').html(150);
+    $('#counter').html(200);
 }
 
 
@@ -277,7 +291,7 @@ $('#counter').html(counter);
 
 $('#message').on('input' , function (){
     let changeCount = $('#message').val().length;
-    let endCounter = 150 - changeCount;
+    let endCounter = 200 - changeCount;
     $('#counter').html(endCounter);
     
     if(endCounter == 0)
@@ -289,4 +303,3 @@ $('#message').on('input' , function (){
         $('#counter').css({'fontWeight' : 'normal' , 'color' : 'black'});
     }
 });
-
