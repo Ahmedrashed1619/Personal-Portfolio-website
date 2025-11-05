@@ -3,6 +3,6 @@
   "devCommand": null,
   "installCommand": null,
   "framework": null,
-  "nodeVersion": "22.x"
+  "nodeVersion": "20.x"
 }
 
