@@ -1,9 +1,0 @@
-{
-  "name": "my-portfolio",
-  "version": "1.0.0",
-  "description": "Ahmed Rashed Portfolio",
-  "engines": {
-    "node": "20.x"
-  }
-}
-
