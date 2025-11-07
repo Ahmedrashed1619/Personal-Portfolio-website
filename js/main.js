@@ -244,7 +244,7 @@ function validUserEmail(){
 
 
 function validTextMessage(){
-    let regexMsg = /^[a-zA-Z0-9- ]{1,200}$/;
+    let regexMsg = /^[a-zA-Z0-9- ]{1,300}$/;
 
     if(regexMsg.test($('#message').val()))
     {
@@ -280,7 +280,7 @@ function resetForm(){
         $('#alertEmail').css('display' , 'none');
         $('#alertMessage').css('display' , 'none');
     }
-    $('#counter').html(200);
+    $('#counter').html(300);
 }
 
 
@@ -291,7 +291,7 @@ $('#counter').html(counter);
 
 $('#message').on('input' , function (){
     let changeCount = $('#message').val().length;
-    let endCounter = 200 - changeCount;
+    let endCounter = 300 - changeCount;
     $('#counter').html(endCounter);
     
     if(endCounter == 0)
