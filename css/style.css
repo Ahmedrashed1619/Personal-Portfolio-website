@@ -608,6 +608,8 @@ nav{
 }
 .portfolio .product img{
     height: 300px;
+    object-fit: cover;
+    object-position: top center;
     border-radius: 5px;
     transition: all 1s;
 }
