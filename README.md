@@ -20,7 +20,7 @@ I build production interfaces that survive real users, real APIs, and real deadl
   ·
   <a href="mailto:ahmedrashed1619@gmail.com">Email</a>
   ·
-  <a href="tel:+201092999658">+20 109 299 9658</a>
+  <a href="tel:+201092999658" dir="ltr">+20 109 299 9658</a>
 </p>
 
 <p align="center">
@@ -232,7 +232,7 @@ Designed and built by **Rashed**.
   ·
   <a href="mailto:ahmedrashed1619@gmail.com">البريد</a>
   ·
-  <a href="tel:+201092999658">+20 109 299 9658</a>
+  <a href="tel:+201092999658" dir="ltr">+20 109 299 9658</a>
 </p>
 
 ### لمحة
@@ -359,7 +359,7 @@ npx serve .
 | | |
 | --- | --- |
 | **البريد** | [ahmedrashed1619@gmail.com](mailto:ahmedrashed1619@gmail.com) |
-| **الهاتف** | [+20 109 299 9658](tel:+201092999658) |
+| **الهاتف** | <a href="tel:+201092999658" dir="ltr">+20 109 299 9658</a> |
 | **LinkedIn** | [ahmed-rashed-008b33221](https://www.linkedin.com/in/ahmed-rashed-008b33221) |
 | **GitHub** | [Ahmedrashed1619](https://github.com/Ahmedrashed1619) |
 | **السيرة** | [PDF](./Ahmed%20Rashed%20-%20Front-End%20Developer%20(CV).pdf) |
