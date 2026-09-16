@@ -1,5 +1,38 @@
 
-// loading to init...........
+const loaderStartedAt = Date.now();
+const loaderLines = [
+    'Assembling the interface',
+    'Loading selected work',
+    'Preparing the experience',
+    'Almost ready'
+];
+
+function cycleLoaderStatus() {
+    let index = 0;
+    const status = $('.loader-status');
+    const timer = window.setInterval(function () {
+        if (!$('#loading').length || $('#loading').hasClass('is-done')) {
+            window.clearInterval(timer);
+            return;
+        }
+        index = (index + 1) % loaderLines.length;
+        status.css('opacity', 0);
+        window.setTimeout(function () {
+            status.text(loaderLines[index]).css('opacity', 1);
+        }, 180);
+    }, 520);
+}
+
+function hideLoader() {
+    const wait = Math.max(0, 1750 - (Date.now() - loaderStartedAt));
+    window.setTimeout(function () {
+        $('#loading').addClass('is-done');
+        window.setTimeout(function () {
+            $('#loading').remove();
+            $('body').css('overflow', 'visible');
+        }, 650);
+    }, wait);
+}
 
 $(document).ready(function(){
     const savedColor = localStorage.getItem('themeColor');
@@ -10,9 +43,8 @@ $(document).ready(function(){
     const savedMode = localStorage.getItem('colorMode') || document.documentElement.getAttribute('data-theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedMode);
 
-    $('#loading').fadeOut(450, function(){
-        $('body').css('overflow','visible')
-    })
+    cycleLoaderStatus();
+    hideLoader();
 })
 
 
