@@ -28,14 +28,28 @@
       </script>
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css?v=6">
+      <link rel="stylesheet" href="css/style.css?v=8">
    </head>
 
    <body>
 
-<div id="loading">
-   <div class="loader-mark">AR</div>
-   <span>Loading</span>
+<div id="loading" role="status" aria-live="polite" aria-label="Loading portfolio">
+   <div class="loader-ambient" aria-hidden="true">
+      <span class="loader-orb loader-orb--one"></span>
+      <span class="loader-orb loader-orb--two"></span>
+      <span class="loader-grid"></span>
+   </div>
+   <div class="loader-stage">
+      <div class="loader-orbit" aria-hidden="true">
+         <div class="loader-mark">AR</div>
+      </div>
+      <p class="loader-brand">Rashed</p>
+      <p class="loader-kicker">Senior Frontend Engineer</p>
+      <div class="loader-meter" aria-hidden="true">
+         <span class="loader-bar"></span>
+      </div>
+      <p class="loader-status">Assembling the interface</p>
+   </div>
 </div>
 
 <div class="colors text-center">
@@ -155,29 +169,95 @@
       <div class="section-head text-center">
          <div class="section-kicker">Services</div>
          <h2>How I help teams ship</h2>
+         <p>Not generic freelance packages — the same production work I already deliver on government, enterprise, and commercial products.</p>
       </div>
       <div class="row g-4">
-         <div class="col-md-4">
-            <article class="service text-center">
-               <div class="service-icon"><i class="fa-solid fa-code fs-4"></i></div>
-               <h3 class="h5 mb-3">Frontend engineering</h3>
-               <p>Production interfaces with clean architecture, reusable systems, and reliable API-driven workflows.</p>
+         <div class="col-md-6">
+            <article class="service">
+               <div class="service-top">
+                  <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+                  <span class="service-index">01</span>
+               </div>
+               <h3>Production frontend</h3>
+               <p>Interfaces that hold up under real users, real APIs, and real deadlines — not just a first Figma pass.</p>
+               <ul class="service-list">
+                  <li>React, Next.js, and TypeScript architecture</li>
+                  <li>State, auth, RBAC, and REST integrations</li>
+                  <li>Performance, accessibility, and reusable UI systems</li>
+               </ul>
             </article>
          </div>
-         <div class="col-md-4">
-            <article class="service text-center">
-               <div class="service-icon"><i class="fa-regular fa-object-ungroup fs-4"></i></div>
-               <h3 class="h5 mb-3">Product UI</h3>
-               <p>Responsive, accessible layouts from Figma to code, with bilingual Arabic/English and RTL/LTR support.</p>
+         <div class="col-md-6">
+            <article class="service">
+               <div class="service-top">
+                  <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-chart-column"></i></div>
+                  <span class="service-index">02</span>
+               </div>
+               <h3>Dashboards &amp; operations</h3>
+               <p>Admin and analytics surfaces for teams who live in numbers, tables, and workflows all day.</p>
+               <ul class="service-list">
+                  <li>KPI cards, charts, maps, and dense data tables</li>
+                  <li>Finance, suppliers, payments, and operational flows</li>
+                  <li>Live updates where they matter, including SSE</li>
+               </ul>
             </article>
          </div>
-         <div class="col-md-4">
-            <article class="service text-center">
-               <div class="service-icon"><i class="fa-solid fa-users fs-4"></i></div>
-               <h3 class="h5 mb-3">Delivery &amp; mentoring</h3>
-               <p>Code reviews, technical direction, and helping teams raise quality without slowing delivery.</p>
+         <div class="col-md-6">
+            <article class="service">
+               <div class="service-top">
+                  <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+                  <span class="service-index">03</span>
+               </div>
+               <h3>Marketplace &amp; bilingual UI</h3>
+               <p>Storefronts and content products that feel native in Arabic and English, on both RTL and LTR layouts.</p>
+               <ul class="service-list">
+                  <li>RTL/LTR navigation, copy, and layout from day one</li>
+                  <li>Search, catalogs, filters, and commerce-adjacent flows</li>
+                  <li>Responsive UI from Figma with production polish</li>
+               </ul>
             </article>
          </div>
+         <div class="col-md-6">
+            <article class="service">
+               <div class="service-top">
+                  <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
+                  <span class="service-index">04</span>
+               </div>
+               <h3>Delivery with teams</h3>
+               <p>Senior ownership that raises quality without turning every ticket into a debate.</p>
+               <ul class="service-list">
+                  <li>Technical direction and practical code review</li>
+                  <li>Mentoring while the product still ships</li>
+                  <li>Clear handoff with backend, design, and product</li>
+               </ul>
+            </article>
+         </div>
+      </div>
+      <div class="service-process">
+         <div class="service-step">
+            <span>01</span>
+            <strong>Scope</strong>
+            <p>Clarify users, constraints, and what actually has to ship.</p>
+         </div>
+         <div class="service-step">
+            <span>02</span>
+            <strong>Interface</strong>
+            <p>Turn Figma into a reusable, bilingual UI system.</p>
+         </div>
+         <div class="service-step">
+            <span>03</span>
+            <strong>Integrate</strong>
+            <p>Wire APIs, state, auth, and the messy production cases.</p>
+         </div>
+         <div class="service-step">
+            <span>04</span>
+            <strong>Ship</strong>
+            <p>Review, polish performance, and hand over something maintainable.</p>
+         </div>
+      </div>
+      <div class="service-cta">
+         <p>If this matches a role or a product you are hiring for, I would rather talk about the work than a service menu.</p>
+         <a href="#contact" class="btn btn-primary-ui text-decoration-none">Start a conversation</a>
       </div>
    </div>
 </section>
@@ -616,7 +696,7 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="js/typed.min.js"></script>
-      <script src="js/main.js?v=6"></script>
+      <script src="js/main.js?v=7"></script>
 
    </body>
 </html>
