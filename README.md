@@ -231,8 +231,9 @@ Designed and built by **Rashed**.
   <a href="https://github.com/Ahmedrashed1619">GitHub</a>
   ·
   <a href="mailto:ahmedrashed1619@gmail.com">البريد</a>
-  ·
-  <a href="tel:+201092999658" dir="ltr">+20 109 299 9658</a>
+</p>
+<p align="center" dir="ltr">
+  <a href="tel:+201092999658">&#x202D;+20 109 299 9658&#x202C;</a>
 </p>
 
 ### لمحة
@@ -359,7 +360,7 @@ npx serve .
 | | |
 | --- | --- |
 | **البريد** | [ahmedrashed1619@gmail.com](mailto:ahmedrashed1619@gmail.com) |
-| **الهاتف** | <a href="tel:+201092999658" dir="ltr">+20 109 299 9658</a> |
+| **الهاتف** | <a href="tel:+201092999658"><bdi dir="ltr">&#x202D;+20 109 299 9658&#x202C;</bdi></a> |
 | **LinkedIn** | [ahmed-rashed-008b33221](https://www.linkedin.com/in/ahmed-rashed-008b33221) |
 | **GitHub** | [Ahmedrashed1619](https://github.com/Ahmedrashed1619) |
 | **السيرة** | [PDF](./Ahmed%20Rashed%20-%20Front-End%20Developer%20(CV).pdf) |
