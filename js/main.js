@@ -2,7 +2,15 @@
 // loading to init...........
 
 $(document).ready(function(){
-    $('#loading').fadeOut(2000, function(){
+    const savedColor = localStorage.getItem('themeColor');
+    if (savedColor) {
+        $(document.documentElement).css('--mainColor', savedColor);
+    }
+
+    const savedMode = localStorage.getItem('colorMode') || document.documentElement.getAttribute('data-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedMode);
+
+    $('#loading').fadeOut(450, function(){
         $('body').css('overflow','visible')
     })
 })
@@ -12,15 +20,7 @@ $(document).ready(function(){
 // rotation location colors container.... 
 
 $('.rotate-icon').click(function(){
-    let currentWidth = $('.colors').width();
-    if($('.colors').css('right') == '0px')
-    {
-        $('.colors').css({'right' : -currentWidth, 'transition' : '1.25s'});
-    }
-    else
-    {
-        $('.colors').css({'right' : '0px', 'transition' : '1.25s'});
-    }
+    $('.colors').toggleClass('is-open');
 })
 
 
@@ -35,17 +35,24 @@ for (let i = 0; i < colorsGroup.length; i++)
 }
 
 $('.screen-show .col-12 li').click(function(){
-    $(this).css('transform' , 'scale(0.75,0.75)');
-    $(this).siblings().css('transform' , 'scale(1,1)');
-    $(this).parent().parent().siblings().find('li').css('transform' , 'scale(1,1)');
+    $('.screen-show li').removeClass('is-active');
+    $(this).addClass('is-active');
     let currentColor = $(this).css("backgroundColor");
     $(document.documentElement).css('--mainColor', currentColor);
+    localStorage.setItem('themeColor', currentColor);
 })
 
 $('.defult').click(function(){
-    let myValue = $('.defult').css('backgroundColor');
+    let myValue = 'crimson';
     $(document.documentElement).css('--mainColor', myValue);
-    $('.screen-show').find('li').css('transform' , 'scale(1,1)');
+    localStorage.setItem('themeColor', myValue);
+    $('.screen-show li').removeClass('is-active');
+})
+
+$('#themeToggle').click(function(){
+    const nextMode = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', nextMode);
+    localStorage.setItem('colorMode', nextMode);
 })
 
 
@@ -57,15 +64,13 @@ $(window).scroll(function(){
     let aboutOffset = $('#about').offset().top;
     let contactOffset = $('#contact').offset().top;
 
-    if($(window).scrollTop() > 200)
+    if($(window).scrollTop() > 40)
     {
-        $('.navbar').css({'backgroundColor' : 'rgba(0, 0, 0, 0.85)', 'transition' : '0.5s'});
-        $('.navbar-collapse').css({'backgroundColor' : 'transparent', 'transition' : '0.5s'});
+        $('.navbar').addClass('is-scrolled');
     }
     else
     {
-        $('.navbar').css({'backgroundColor' : 'transparent', 'transition' : '0.5s'});
-        $('.navbar-collapse').css({'backgroundColor' : 'rgba(0, 0, 0, 0.85)', 'transition' : '0.5s'});
+        $('.navbar').removeClass('is-scrolled');
     }
     if($(window).scrollTop() > aboutOffset && $(window).scrollTop() < contactOffset-250)
     {
@@ -104,17 +109,22 @@ $('.navbar-nav .nav-item a').click(function(){
 // Auto typing...
 
 let typed = new Typed('.element', {
-    strings : ['Frontend Developer.', 'Frontend Designer.', 'Freelancer.'],
-    typeSpeed : 100,
-    backSpeed : 50,
+    strings : ['production web apps.', 'dashboards at scale.', 'multilingual products.'],
+    typeSpeed : 70,
+    backSpeed : 40,
     loop : true
 });
 
 let autoTyped = new Typed('.typing', {
-    strings : ['Frontend Developer.', 'Frontend Designer.', 'Freelancer.'],
-    typeSpeed : 100,
-    backSpeed : 50,
+    strings : ['Senior Frontend Engineer.', 'React & Next.js specialist.', 'product-minded developer.'],
+    typeSpeed : 70,
+    backSpeed : 40,
     loop : true
+});
+
+$('#toggleMoreWork').click(function(){
+    $('#moreWork').toggleClass('is-open');
+    $(this).text($('#moreWork').hasClass('is-open') ? 'Show less work' : 'Show more work');
 });
 
 
@@ -204,9 +214,9 @@ if($('#message') != null){
 // Validation for form...
 
 function validUserName(){
-    let regexName = /^[A-Z][a-z- ]{2,15}$/;
+    let regexName = /^[A-Za-z\u0600-\u06FF][A-Za-z\u0600-\u06FF\s.'-]{1,49}$/;
 
-    if(regexName.test($('#name').val()))
+    if(regexName.test($('#name').val().trim()))
     {
         $('#name').addClass('is-valid');
         $('#name').removeClass('is-invalid');
@@ -224,9 +234,9 @@ function validUserName(){
 
 
 function validUserEmail(){
-    let regexEmail = /^[a-zA-Z0-9.!#$%&'*+=?^_]{3,25}(@[a-zA-Z0-9]{3,25}\.[a-zA-Z0-9.!#$%&'*+=?^_]{3,25})$/;
+    let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-    if(regexEmail.test($('#email').val()))
+    if(regexEmail.test($('#email').val().trim()))
     {
         $('#email').addClass('is-valid');
         $('#email').removeClass('is-invalid');
@@ -244,9 +254,9 @@ function validUserEmail(){
 
 
 function validTextMessage(){
-    let regexMsg = /^[a-zA-Z0-9- ]{1,300}$/;
+    let value = $('#message').val().trim();
 
-    if(regexMsg.test($('#message').val()))
+    if(value.length >= 8 && value.length <= 300)
     {
         $('#message').addClass('is-valid');
         $('#message').removeClass('is-invalid');
@@ -300,6 +310,6 @@ $('#message').on('input' , function (){
     }
     else
     {
-        $('#counter').css({'fontWeight' : 'normal' , 'color' : 'black'});
+        $('#counter').css({'fontWeight' : 'normal' , 'color' : '#9aa3b5'});
     }
 });

@@ -1,759 +1,593 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
    <head>
       <meta charset="UTF-8">
-      <meta name="description" content="Ahmed Rashed - Expert Frontend Developer specializing in React.js, Next.js, and modern web technologies. Creating responsive, high-performance websites and web applications with clean code and exceptional user experiences. Explore my portfolio of professional projects.">
-      <meta name="keywords" content="Ahmed Rashed, Frontend Developer, React Developer, Web Developer, JavaScript Developer, Portfolio, React.js, Next.js, TypeScript, Web Design, UI/UX, Frontend Development, Egypt">
+      <meta name="description" content="Ahmed Rashed - Senior Frontend Engineer specializing in React.js, Next.js, and production-grade web applications.">
+      <meta name="keywords" content="Ahmed Rashed, Frontend Developer, React Developer, Next.js, TypeScript, Portfolio, Egypt">
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="Ahmed Rashed" />
-      <title>Ahmed Rashed Portfolio</title>
+      <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+      <meta property="og:title" content="Ahmed Rashed | Senior Frontend Engineer">
+      <meta property="og:description" content="Production-grade frontend work in React, Next.js, and TypeScript — government, enterprise, and commercial products.">
+      <meta property="og:type" content="website">
+      <meta property="og:image" content="img/img4.jpg">
+      <meta name="twitter:card" content="summary">
+      <title>Ahmed Rashed | Senior Frontend Engineer</title>
       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500&family=Alegreya:wght@500&family=Inspiration&family=Lobster&family=Oleo+Script&family=Oleo+Script+Swash+Caps:wght@700&family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@600;900&family=Ubuntu:wght@400;500;700&family=Yeseva+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+      <script>
+         (function () {
+            var mode = localStorage.getItem('colorMode');
+            if (!mode) {
+               mode = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', mode);
+         })();
+      </script>
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/style.css?v=6">
    </head>
 
    <body>
 
-<!----------------------------------------------Loading-------------------------------------------->
 <div id="loading">
-   <i class="fa fa-spinner fa-5x fa-spin"></i>
+   <div class="loader-mark">AR</div>
+   <span>Loading</span>
 </div>
 
-<!-------------------------------------------Change Colors----------------------------------------->
-<div class="colors bg-simeBlack text-white text-center position-absolute py-5 px-0 position-relative">
-   <div class="container">
-      <div class="screen-show w-75 mx-auto list-unstyled">
-         <a class="bg-simeBlack px-3 py-2 text-white fs-4 rotate-icon"><i class="fa-solid fa-gear"></i></a>
-         <h5 class="pb-2 mb-4">Unlimited Colors</h5>
-         <div class="row">
-            <div class="col-12">
-               <ul class="list-unstyled d-flex justify-content-between align-items-center">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-               </ul>
-            </div>
-            <div class="col-12">
-               <ul class="list-unstyled d-flex justify-content-between align-items-center">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-               </ul>
-            </div>
-            <div class="col-12">
-               <ul class="list-unstyled d-flex justify-content-between align-items-center">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-               </ul>
-            </div>
+<div class="colors text-center">
+   <div class="screen-show list-unstyled">
+      <a class="fs-5 rotate-icon" aria-label="Open theme colors"><i class="fa-solid fa-palette"></i></a>
+      <h5>Theme colors</h5>
+      <div class="row g-3">
+         <div class="col-12">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0">
+               <li></li><li></li><li></li><li></li>
+            </ul>
          </div>
-         <li class="default mt-4"><a class="btn text-white text-decoration-none text-center fw-bold px-3 py-2"><i class="fa-solid fa-rotate-left me-2"></i>Default Color</a></li>
+         <div class="col-12">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0">
+               <li></li><li></li><li></li><li></li>
+            </ul>
+         </div>
+         <div class="col-12">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0">
+               <li></li><li></li><li></li><li></li>
+            </ul>
+         </div>
       </div>
+      <button type="button" class="btn defult default text-white fw-bold px-3 py-2 mt-4"><i class="fa-solid fa-rotate-left me-2"></i>Default color</button>
    </div>
 </div>
 
-<!----------------------------------------------Header--------------------------------------------->
 <header id="home" class="header">
-   <div class="caption min-vh-100 d-flex justify-content-center align-items-center text-center">
-      <a id="topBtn" class="position-fixed bottom-0 end-0 translate-middle text-white"><i class="fa-solid fa-chevron-up fs-3 p-2 main-bg rounded-circle"></i></a>
+   <div class="caption d-flex justify-content-center align-items-center text-center">
+      <a id="topBtn" class="position-fixed bottom-0 end-0 mb-4 me-4 text-white" aria-label="Back to top"><i class="fa-solid fa-chevron-up fs-5 p-3 main-bg rounded-circle"></i></a>
       <div class="container">
          <div class="title-header text-white mt-5 d-flex justify-content-center align-items-center flex-column">
-            <img src="img/img4.jpg" class="mx-auto my-3 rounded-circle" loading="lazy" alt="Ahmed Rashed">
-            <h4 class="mb-0">Hello.. my name is</h4>
+            <img src="img/img4.jpg" class="hero-photo mb-4" alt="Ahmed Rashed">
+            <p class="hero-kicker mb-2">Senior Frontend Engineer</p>
             <h1 class="fs-h1">Ahmed Rashed</h1>
-            <h3 class="mb-2">And I'm a <span class="main-color fw-bold element"></span></h3>
-            <a href="#contact" class="btn main-bg text-white text-decoration-none px-2 my-2"><i class="fa-solid fa-paper-plane me-2"></i> Hire me</a>
-            <a href="#about" class="text-white fs-4 move"><i class="fa-solid fa-angles-down"></i></a>
+            <h2 class="hero-role">I build <span class="main-color fw-bold element"></span></h2>
+            <div class="hero-actions">
+               <a href="#portfolio" class="btn btn-primary-ui text-decoration-none">View selected work</a>
+               <a href="./Ahmed Rashed - Front-End Developer (CV).pdf" download class="btn btn-ghost-ui text-decoration-none">Download CV</a>
+            </div>
+            <a href="#about" class="scroll-hint text-decoration-none" aria-label="Scroll to about"><i class="fa-solid fa-angles-down fs-4"></i></a>
          </div>
       </div>
    </div>
 </header>
 
-<!---------------------------------------------Navbar---------------------------------------------->
 <nav class="navbar navbar-expand-lg fixed-top">
-   <div class="container-fluid container-lg">
-      <a class="navbar-brand main-color fs-1">Rashed</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      </button>
+   <div class="container">
+      <a class="navbar-brand main-color fs-3" href="#home">Rashed</a>
+      <div class="nav-tools">
+         <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch color mode">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+         </button>
+         <div class="my-links">
+            <ul class="links">
+               <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ahmed-rashed-008b33221" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/Ahmedrashed1619" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+               <li><a href="mailto:ahmedrashed1619@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+         </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav ms-auto mx-lg-auto mb-2 mb-lg-0 d-flex justify-content-evenly align-items-center">
-            <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#contact">Contact</a>
-            </li>
-         </ul>
-      </div>
-
-      <!-- ...Social Media... -->
-      <div class="my-links">
-         <ul class="links mt-3">
-            <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f"></i></a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://www.instagram.com/a.rashed1619"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter"></i></a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in"></i></a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github"></i></a>
-            </li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Work</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
          </ul>
       </div>
    </div>
 </nav>
 
-<!------------------------------------------About Section-------------------------------------------->
-<section id="about" class="about">
-   <div class="cont-about py-5">
-      <div class="container">
-         <div class="row gy-5">
-            <div class="col-12">
-               <div class="main-title text-center mb-4">
-                  <h2 class="fw-bold fs-1 mb-0">About me</h2>
-                  <h6 class="main-color fw-bold">who i am</h6>
-               </div>
-            </div>
-            <div class="col-lg-6">
-               <div class="about-img text-center d-flex justify-content-center align-items-center w-75 mx-auto">
-                  <img class="w-100" src="img/rashed4.jpg" loading="lazy" alt="Ahmed Rashed">
-                  <div class="layer-img d-flex justify-content-center align-items-center w-100 mx-auto">
-                     <div class="links text-white w-75 mx-auto d-flex justify-content-evenly align-items-center">
-                        <a target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f p-3 rounded-circle"></i></a>
-                        <a target="_blank" href="https://www.instagram.com/a.rashed1619"><i class="fa-brands fa-instagram p-3 rounded-circle"></i></a>
-                        <a target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter p-3 rounded-circle"></i></a>
-                        <a target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in p-3 rounded-circle"></i></a>
-                        <a target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github p-3 rounded-circle"></i></a>
-                     </div>
+<section id="about" class="about py-5">
+   <div class="container py-4">
+      <div class="section-head text-center">
+         <div class="section-kicker">About</div>
+         <h2>A frontend engineer for production systems</h2>
+      </div>
+      <div class="row gy-5 align-items-center">
+         <div class="col-lg-5">
+            <div class="about-img">
+               <img src="img/rashed4.jpg" alt="Ahmed Rashed">
+               <div class="layer-img">
+                  <div class="about-social d-flex justify-content-center gap-2">
+                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ahmed-rashed-008b33221" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ahmedrashed1619" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                     <a href="mailto:ahmedrashed1619@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                   </div>
                </div>
             </div>
-            <div class="col-lg-6 d-flex align-items-center">
-               <div class="about-title ps-2">
-                  <h4 class="mb-3"><span class="main-color">I</span>'m Ahmed and <span class="main-color">I</span>'m a <span class="typing main-color last-span"></span></h4>
-                  <p class="text-muted fs-6 mb-3 lh-base" contenteditable="true" spellcheck="true">I aim to work in a challenging environment where I can utilize my technical expertise to develop and implement innovative ideas, contribute to organizational growth, and continuously learn new technologies.</p>
-                  <div class="row">
-                     <div class="col-12">
-                        <div class="info">
-                           <p class="text-muted fs-6 mb-2"><i class="fa-regular fa-calendar-days me-2 fs-6 main-color"></i> Age : <span class="text-black">28 </span></p>
-                           <p class="text-muted fs-6 mb-2"><i class="fa-solid fa-phone me-2 fs-6 main-color"></i> Phone : <a href="tel:+201092999658" target="_blank" class="text-black text-decoration-none">+201092999658</a></p>
-                           <p class="text-muted fs-6 mb-2"><i class="fa-solid fa-envelope-circle-check me-2 fs-6 main-color"></i> Email : <a href="mailto: ahmedrashed1619@gmail.com" target="_blank" class="text-black text-decoration-none">ahmedrashed1619@gmail.com.</a></p>
-                        </div>
-                     </div>
-                     <div class="col-12">
-                        <div class="info">
-                           <p class="text-muted fs-6 mb-2"><i class="fa-solid fa-building-columns me-2 fs-6 main-color"></i> Study : <span class="text-black">Al-Azhar University, Cairo.</span></p>
-                           <p class="text-muted fs-6 mb-2"><i class="fa-solid fa-graduation-cap me-2 fs-6 main-color"></i> Grade : <span class="text-black">Excellent with honors.</span></p>
-                           <p class="text-muted fs-6"><i class="fa-solid fa-location-dot me-2 fs-6 main-color"></i> Location : <span class="text-black">El-Malik Faisal St - Giza - Egypt.</span></p>
-                        </div>
-                     </div>
-                  </div>
-                  <a target="_blank" href="./Ahmed Rashed - Front-End Developer (CV).pdf" download class="btn main-bg text-white text-decoration-none py-2 px-3 mt-2"><i class="fa-solid fa-download me-2"></i> Download CV</a>
+         </div>
+         <div class="col-lg-7">
+            <div class="about-copy">
+               <h3>I'm Ahmed, a <span class="typing main-color"></span></h3>
+               <p>Senior Frontend Engineer with 4+ years building production-grade applications in React, Next.js, and TypeScript. I own architecture, state management, API integration, and multilingual RTL/LTR experiences across government, enterprise, and commercial products.</p>
+               <div class="meta-grid">
+                  <p><i class="fa-regular fa-calendar-days me-2 main-color"></i>Age: <span>28</span></p>
+                  <p><i class="fa-solid fa-phone me-2 main-color"></i>Phone: <a href="tel:+201092999658">+201092999658</a></p>
+                  <p><i class="fa-solid fa-envelope me-2 main-color"></i>Email: <a href="mailto:ahmedrashed1619@gmail.com">ahmedrashed1619@gmail.com</a></p>
+                  <p><i class="fa-solid fa-building-columns me-2 main-color"></i>Study: <span>Al-Azhar University</span></p>
+                  <p><i class="fa-solid fa-graduation-cap me-2 main-color"></i>Grade: <span>Excellent with honors</span></p>
+                  <p><i class="fa-solid fa-location-dot me-2 main-color"></i>Location: <span>Giza, Egypt</span></p>
                </div>
+               <a href="./Ahmed Rashed - Front-End Developer (CV).pdf" download class="btn btn-primary-ui text-decoration-none"><i class="fa-solid fa-download me-2"></i>Download CV</a>
             </div>
          </div>
       </div>
    </div>
 </section>
 
-<!------------------------------------------Services Section------------------------------------------>
-<section id="services" class="services">
-   <div class="cont-services py-5 second-bg text-white text-center">
-      <div class="container">
-         <div class="row gy-5">
-            <div class="col-12">
-               <div class="main-title mb-4">
-                  <h2 class="fw-bold fs-1 mb-0">My services</h2>
-                  <h6 class="main-color fw-bold">what i provide</h6>
-               </div>
-            </div>
-            <div class="col-lg-4">
-               <div class="service bg-dark px-2 py-4">
-                  <span class="main-color"><i class="fa-solid fa-code fs-1"></i></span>
-                  <h3 class="my-3 fw-bold">Web Develop</h3>
-                  <p contenteditable="true" spellcheck="true">I use my technical skills to find creative solutions to technical challenges quickly, delivering clean and professional code.</p>
-               </div>
-            </div>
-            <div class="col-lg-4">
-               <div class="service bg-dark px-2 py-4">
-                  <span class="main-color"><i class="fa-regular fa-lightbulb fs-1"></i></span>
-                  <h3 class="my-3 fw-bold">Web Design</h3>
-                  <p contenteditable="true" spellcheck="true">I create responsive designs using tools such as <span class="main-color">Adobe XD</span>, <span class="main-color">Photoshop</span>, and others, implementing them with clean and professional code.</p>
-               </div>
-            </div>
-            <div class="col-lg-4">
-               <div class="service bg-dark px-2 py-4">
-                  <span class="main-color"><i class="fa-solid fa-arrow-trend-up fs-1"></i></span>
-                  <h3 class="my-3 fw-bold">Helping grow</h3>
-                  <p contenteditable="true" spellcheck="true">I work effectively under pressure with high productivity and contribute as a valuable team member to elevate the company's success.</p>
-               </div>
-            </div>
+<section id="services" class="services py-5">
+   <div class="container py-4">
+      <div class="section-head text-center">
+         <div class="section-kicker">Services</div>
+         <h2>How I help teams ship</h2>
+      </div>
+      <div class="row g-4">
+         <div class="col-md-4">
+            <article class="service text-center">
+               <div class="service-icon"><i class="fa-solid fa-code fs-4"></i></div>
+               <h3 class="h5 mb-3">Frontend engineering</h3>
+               <p>Production interfaces with clean architecture, reusable systems, and reliable API-driven workflows.</p>
+            </article>
          </div>
-      </div>   
-   </div>
-</section>
-
-<!------------------------------------------Skills Section--------------------------------------------->
-<section id="skills" class="skills">
-   <div class="cont-skills pt-5">
-      <div class="container">
-         <div class="row gy-3 gx-0">
-            <div class="col-12">
-               <div class="main-title text-center mb-5">
-                  <h2 class="fw-bold fs-1 mb-0">My skills</h2>
-                  <h6 class="main-color fw-bold">what i know</h6>
-               </div>
-               <p class="text-center w-85 mx-auto text-black-50 fs-5" contenteditable="true" spellcheck="true">I have great patience for learning everything related to the field and continuously work to gain experience, improve my skills, and contribute to the company's success.</p>
-            </div>
-            <div class="col-lg-6">
-               <div class="progs">
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Web Design</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-95 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>HTML</span>
-                        <span>95%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Css</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Bootstrap / Tailwind</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Sass</span> 
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-80 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Type Script</span>
-                        <span>80%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-6">
-               <div class="progs">
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Dom js</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>RegExp</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>AJAX (Rest Api)</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>JS (Es6)</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-90 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>React js/ Next js</span>
-                        <span>90%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-                  <div class="parent">
-                     <div class="w-85 fw-bold d-flex justify-content-between align-items-center mb-1">
-                        <span>Redux / Redux Toolkit</span>
-                        <span>85%</span>
-                     </div>
-                     <div class="progress" style="height: 0.5rem;">
-                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="w-50 mx-auto text-center">
-               <a target="_blank" href="./Ahmed Rashed - Front-End Developer (CV).pdf" download class="btn main-bg text-white text-decoration-none py-2 px-3 mt-4"><i class="fa-solid fa-download me-2"></i> Download CV</a>
-            </div>
+         <div class="col-md-4">
+            <article class="service text-center">
+               <div class="service-icon"><i class="fa-regular fa-object-ungroup fs-4"></i></div>
+               <h3 class="h5 mb-3">Product UI</h3>
+               <p>Responsive, accessible layouts from Figma to code, with bilingual Arabic/English and RTL/LTR support.</p>
+            </article>
+         </div>
+         <div class="col-md-4">
+            <article class="service text-center">
+               <div class="service-icon"><i class="fa-solid fa-users fs-4"></i></div>
+               <h3 class="h5 mb-3">Delivery &amp; mentoring</h3>
+               <p>Code reviews, technical direction, and helping teams raise quality without slowing delivery.</p>
+            </article>
          </div>
       </div>
    </div>
 </section>
 
-<!------------------------------------------Portfolio Section------------------------------------------>
-<section id="portfolio" class="portfolio">
-   <div class="cont-portfolio second-bg text-white text-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L40,229.3C80,235,160,245,240,250.7C320,256,400,256,480,218.7C560,181,640,107,720,112C800,117,880,203,960,234.7C1040,267,1120,245,1200,224C1280,203,1360,181,1400,170.7L1440,160L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-      <div class="container">
-         <div class="row gy-5 gx-lg-4">
-            <div class="col-12">
-               <div class="main-title mb-4">
-                  <h2 class="fw-bold fs-1 mb-0">My Works</h2>
-                  <h6 class="main-color fw-bold">what i created</h6>
-               </div>
-            </div>
-            <!-- Capmas ( Website & Dashboard ) -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://www.capmas.gov.eg/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/capmas.png" class="w-100" loading="lazy" alt="capmas website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Capmas ( Website & Dashboard )</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website & dashboard</span> for <span>CAPMAS</span> - Discover Egypt's official source for trusted data and insights. The CAPMAS website provides comprehensive statistics, publications, and interactive services across a wide range of sectors and topics. Explore publicly available tools and reports, stay informed with the latest releases, and learn more about the history of CAPMAS and the evolution of statistical work in Egypt.</p>
-                           <!-- Using <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span>, <span>React-owl-carousel</span>, <span>React-icons</span>, <span>React-router-dom</span> and other tools<br><span>(Plugins for animation)</span></p> -->
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- AIO -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <img src="img/aio.png" class="w-100" loading="lazy" alt="AIO enterprise project management platform">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column text-white">
-                        <h4 class="my-2 fw-bold main-color">AIO</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive dashboard</span> for an <span>enterprise project management platform</span> covering project management, financial tracking, supplier/contractor management, payments, and operational analytics, with RBAC and Arabic/English RTL/LTR support. Built with <br><span>React.js</span>, <span>Redux Toolkit</span>, <span>Redux Saga</span>, <span>SWR</span>, <span>Axios</span>, <span>Ant Design</span>, <span>React Intl</span>, <span>Tailwind</span> and <span>Sass</span></p>
-                     </div>
-               </div>
-            </div>
-            <!-- AL_Weam Cars ( Website & Dashboard ) -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://www.alweamcar.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/alweam.png" class="w-100" loading="lazy" alt="alweamcars website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Al-Weam Cars</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website & dashboard</span> for Al-Weam Cars - Your trusted destination for buying and selling cars in the UAE. Browse quality vehicles, post your car ads quickly, and connect with verified buyers across all Emirates. A fast, easy, and secure car trading platform with comprehensive listings and expert support.</p>
-                           <!-- Using <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Tailwind</span>, <span>React-owl-carousel</span>, <span>React-icons</span>, <span>Email.js</span> and other tools<br><span>(Plugins for animation)</span></p> -->
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Daleel Mob -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://daleelmob.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/daleel-mop.png" class="w-100" loading="lazy" alt="daleel-mop website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Daleel Mob</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website</span> to compare phones and help users choose the right device, plus view the latest articles in technical and non-technical fields. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span>, <span>React-icons</span> and other tools<br><span>(jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- 3aedi -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://app.3aedi.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/3aedi.png" class="w-100" loading="lazy" alt="3aedi dashboard">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">3aedi</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive dashboard</span> for 3aedi — a revenue and business management platform covering sales performance, advertising campaigns, expenses, and team management. Built with <br><span>React.js</span>, <span>TypeScript</span>, <span>Redux Toolkit</span>, <span>Redux Saga</span>, <span>SWR</span>, <span>Axios</span>, <span>Ant Design</span>, <span>React Chart.js</span>, <span>Tailwind</span> and <span>Sass</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Digital Hub -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://digitalhub.com.eg/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/digitalhub.png" class="w-100" loading="lazy" alt="digitalhub website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Digital Hub</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website</span> for Digital Hub Company to showcase information, services, products, and projects. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Tailwind</span>, <span>React-owl-carousel</span>, <span>React-icons</span>, <span>Email.js</span> and other tools<br><span>(Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Zari Lo loading="lazy"yalty System Website -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://zariloyalty.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/zari system.png" class="w-100" loading="lazy" alt="zari system Website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Zari Loyalty System Website</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Zari Loyalty System Website</span> is a <span>valid and responsive website</span> to view services and other information about Zari Company. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(Axios for APIs - jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- shaghaf -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://shaghafalibdaa.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/shaghaf.png" class="w-100" loading="lazy" alt="shaghafalibdaa website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">shaghaf</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website</span> for a creativity carpentry workshop specialized in high-quality and creative woodwork. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span>, <span>React-icons</span>, <span>Email.js</span> and other tools<br><span>(jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Rased Tech -->
-            <div class="col-lg-6 col-xxl-4"> 
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://rased-tech.vercel.app/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/rased-tech.png" class="w-100" loading="lazy" alt="rased-tech website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Rased Tech</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website</span> to display smart homes & networking products. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span>, <span>Antd</span>, <span>React-icons</span> and other tools<br><span>(jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Bytrh Dashboard -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://admin.bytrh.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/bytrh.png" class="w-100" loading="lazy" alt="bytrh dashboard">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Bytrh Dashboard</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive dashboard</span> for Bytrh Apps (client, doctor) to display lists in tables, perform CRUD operations, and enable real-time chat. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span>, <span>MUI</span>, <span>React-icons</span>, <span>Formik</span>, <span>Framer-motion</span>, <span>React-hot-toast</span>, <span>React-tooltip</span>, <span>React-scroll-to-bottom</span> and other tools<br><span>(Axios for APIs - jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Zari Falcon Website & Dashboard -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://zarifalcon.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/zarifalcon.png" class="w-100" loading="lazy" alt="zarifalcon website & dashboard">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Zari Falcon Website & Dashboard</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>It's</span> a <span>valid & responsive website & dashboard</span> for tracking visit times, geographical employee tracking, immediate customer data saving, sending reports to employees, and more. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(Axios for APIs - jQuery - Plugins for animation - packages)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Zari Main Website -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://zarisolution.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Zari Main Website.png" class="w-100" loading="lazy" alt="zarisolution Website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Zari Main Website</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Zari Main Website</span> is a <span>valid, responsive, and production-ready website</span> to showcase information, services, products, projects, and other details about Zari Company. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>Sass</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(Axios for APIs - jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Zari On Time Website -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://zariontime.com/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/on time.png" class="w-100" loading="lazy" alt="zari on time Website">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Zari On Time Website</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Zari On Time Website</span> is a <span>valid and responsive website</span> to view services and other information about Zari Company. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(DOM - jQuery)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://custom-ruddy.vercel.app/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/custom-app.png" class="w-100" loading="lazy" alt="zari Custom App">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Zari Custom page</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Zari Custom landing page</span> is a <span>valid and Responsive landing page</span> to view the services and learn about the benefits of creatin an online store through zari Company Using <br><span>HTML</span>, <span>Css</span>, <span>Bootstrap</span> and <span>Javascript</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div> -->
-            <!-- Appe Website -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://appe-services-main.vercel.app/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/appe.png" class="w-100" loading="lazy" alt="Appe template">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Appe Website</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Appe Website</span> is a <span>valid and responsive template</span> to view services and other information about Appe. Built with <br><span>React.js</span>, <span>Hooks</span>, <span>React icons</span>, <span>Sass</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(jQuery - Plugins for animation)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Zari E-Commerce landing page -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://zariagency.com/emarketing/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/e-commerce.png" class="w-100" loading="lazy" alt="zari E-Commerce App">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Zari E-Commerce landing page</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Zari E-Commerce landing page</span> is a <span>valid and responsive landing page</span> to view services and other information about Zari Company. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(RegExp - DOM - jQuery)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Movies App -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Movies-App/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Movies App.png" class="w-100" loading="lazy" alt="Movies App">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Movies App</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Movies App</span> is a <span>valid and responsive app</span> to display movie information including release dates, top views, ratings, evaluations, and more, plus a valid registration form. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(API - RegExp - DOM - jQuery)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Real Time Weather App -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Weather-App/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Real Time Weather.png" class="w-100" loading="lazy" alt="Real Time Weather">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Real Time Weather App</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Real-Time Weather</span> is a <span>valid and responsive app</span> to get expected temperatures for the next 3 days by searching for a country name. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(API - RegExp - DOM)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Recipes meal App -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Recipes-Meal-App/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Recipes meal.png" class="w-100" loading="lazy" alt="Recipes meal">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Recipes meal App</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Recipes Meal</span> is a <span>valid and responsive app</span> to discover meal recipes by clicking on a meal name or searching. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(API - RegExp - DOM)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Smart Login System -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Smart-Login-System/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/login.png" class="w-100" loading="lazy" alt="Smart Login System">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Smart Login System</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Smart Login System</span> is a project for login and logout <span>validation</span> with <span>100% responsive design</span>. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(Local storage - RegExp - DOM)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- CRUDs Operations -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/CRUDs-Operations/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/CRUDs Operations.png" class="w-100" loading="lazy" alt="CRUDs Operations">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">CRUDs Operations</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>CRUD Operations System</span> is a valid project management system. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(Local storage - RegExp)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Egyptian Party -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Egyptian-Party/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Egyptian-Party.png" class="w-100" loading="lazy" alt="Egyptian-Party">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Egyptian Party</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Egyptian Party</span> is a simple and valid product to reserve tickets for the party and display the time remaining until it starts. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(jQuery - RegExp - 100% Responsive)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Earth Slider Quotes -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Earth-Slider-Quotes/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Earth Quotes.png" class="w-100" loading="lazy" alt="Earth Slider Quotes">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Earth Slider Quotes</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Earth Slider Quotes</span> is a <span>valid and responsive app</span> to display a set of photos in a slider with quotes. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(DOM)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Book Marker CRUD -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Book-Marker-CRUD/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Book Marker.png" class="w-100" loading="lazy" alt="Book Marker">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Book Marker CRUD</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Book Marker CRUD</span> is a simple project for CRUD operations validation. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span><br><span>(Local storage - RegExp)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Quote of the day -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Quote-of-the-day/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/Quote of the day.png" class="w-100" loading="lazy" alt="Quote of the day">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Quote of the day</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Quote of the Day</span> is a simple and <span>responsive</span> project to view random quotes by pressing a button. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span> and <span>JavaScript</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Angora Portfolio -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Angora-Responsive/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/slideshow-3.jpg" class="w-100" loading="lazy" alt="Angora Portfolio">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Angora Portfolio</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Angora Portfolio</span> is a simple template. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span><br><span>(100% Responsive)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- DevFolio Portfolio -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/DevFolio-Bootstrap/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/work-5.jpg" class="w-100" loading="lazy" alt="DevFolio Portfolio">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">DevFolio Portfolio</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>DevFolio Portfolio</span> is a simple template. Built with <br><span>HTML</span>, <span>CSS</span>, <span>Bootstrap</span><br><span>(100% Responsive)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Simone Portfolio -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Simone-portfolio/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/intro-bg.jpg" class="w-100" loading="lazy" alt="Simone Portfolio">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Simone Portfolio</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Simone Portfolio</span> is a simple template. Built with <br><span>HTML</span>, <span>CSS</span><br><span>(100% Responsive)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
-            <!-- Fokir Portfolio -->
-            <div class="col-lg-6 col-xxl-4">
-               <div class="product bg-dark py-4 px-2">
-                  <a href="https://ahmedrashed1619.github.io/Fokir-Portfolio/" class="text-white" target="_blank" rel="noopener noreferrer"><img src="img/slider-01.jpg" class="w-100" loading="lazy" alt="Fokir Portfolio">
-                     <div class="product-title d-flex justify-content-center align-items-center flex-column">
-                        <h4 class="my-2 fw-bold main-color">Fokir Portfolio</h4>
-                        <p contenteditable="true" spellcheck="true" class="p-3"><span>Fokir Portfolio</span> is a simple template. Built with <br><span>HTML</span>, <span>CSS</span><br><span>(100% Responsive)</span></p>
-                     </div>
-                  </a>
-               </div>
-            </div>
+<section id="skills" class="skills py-5">
+   <div class="container py-4">
+      <div class="section-head text-center">
+         <div class="section-kicker">Skills</div>
+         <h2>Tools I use in production</h2>
+         <p>Selected technologies from recent government, enterprise, and commercial products.</p>
+      </div>
+      <div class="row g-4">
+         <div class="col-md-6 col-xl-3">
+            <article class="skill-card">
+               <h3>Frontend</h3>
+               <div class="pills"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>HTML5</span><span>CSS3</span></div>
+            </article>
          </div>
-      </div> 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,101.3C96,107,192,117,288,144C384,171,480,213,576,208C672,203,768,149,864,149.3C960,149,1056,203,1152,197.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+         <div class="col-md-6 col-xl-3">
+            <article class="skill-card">
+               <h3>State &amp; data</h3>
+               <div class="pills"><span>Redux Toolkit</span><span>Redux Saga</span><span>SWR</span><span>React Query</span><span>Axios</span><span>REST APIs</span></div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-3">
+            <article class="skill-card">
+               <h3>UI systems</h3>
+               <div class="pills"><span>Sass</span><span>Tailwind</span><span>MUI</span><span>Ant Design</span><span>Bootstrap</span><span>React Intl</span></div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-3">
+            <article class="skill-card">
+               <h3>Engineering</h3>
+               <div class="pills"><span>Git</span><span>Azure DevOps</span><span>SSE</span><span>Accessibility</span><span>Performance</span><span>Code review</span></div>
+            </article>
+         </div>
+      </div>
    </div>
 </section>
 
-<!------------------------------------------Contact Section------------------------------------------>
-<section id="contact" class="contact">
-   <div class="cont-contact pb-5">
-      <div class="container">
-         <div class="row g-4">
-            <div class="col-12">
-               <div class="main-title text-center mb-5">
-                  <h2 class="fw-bold fs-1 mb-0">Contact me</h2>
-                  <h6 class="main-color fw-bold">get in touch</h6>
+<section id="portfolio" class="portfolio py-5">
+   <div class="container py-4">
+      <div class="section-head text-center">
+         <div class="section-kicker">Selected work</div>
+         <h2>Projects from the CV, first</h2>
+         <p>Flagship production work, then additional websites, dashboards, and experiments.</p>
+      </div>
+      <div class="row g-4">
+         <div class="col-lg-6">
+            <article class="work-card featured">
+               <div class="work-card__media"><img src="img/capmas.png" loading="lazy" alt="CAPMAS website and dashboard"></div>
+               <div class="work-card__body">
+                  <span class="work-card__tag">Government · 2023–2025</span>
+                  <h3>CAPMAS</h3>
+                  <p>Egypt’s official statistics platform. I delivered 90%+ of the frontend across the public site and admin dashboard, including maps, charts, and a streaming SSE chatbot.</p>
+                  <div class="pills mb-3"><span>React</span><span>Redux Toolkit</span><span>MUI</span><span>SWR</span></div>
+                  <a class="work-card__link" href="https://www.capmas.gov.eg/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-6">
+            <article class="work-card featured">
+               <div class="work-card__media"><img src="img/aio.png" loading="lazy" alt="AIO enterprise project management platform"></div>
+               <div class="work-card__body">
+                  <span class="work-card__tag">Enterprise · 2024</span>
+                  <h3>AIO</h3>
+                  <p>Enterprise project-management system. I owned 95%+ of the frontend for finance, suppliers, payments, RBAC, and operational analytics.</p>
+                  <div class="pills mb-3"><span>React</span><span>Ant Design</span><span>Redux Saga</span><span>Tailwind</span></div>
+                  <span class="work-card__link">Private platform</span>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/alweam.png" loading="lazy" alt="Al-Weam Cars"></div>
+               <div class="work-card__body">
+                  <span class="work-card__tag">E-commerce · 2025</span>
+                  <h3>Al-Weam Cars</h3>
+                  <p>UAE automotive marketplace. I owned the storefront and admin dashboard, including search, trade-in, financing, and bilingual RTL/LTR flows.</p>
+                  <div class="pills mb-3"><span>React</span><span>Ant Design</span><span>React Intl</span></div>
+                  <a class="work-card__link" href="https://www.alweamcar.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/daleel-mop.png" loading="lazy" alt="Daleel Mob"></div>
+               <div class="work-card__body">
+                  <span class="work-card__tag">Marketplace · 2024</span>
+                  <h3>Daleel Mob</h3>
+                  <p>High-traffic electronics marketplace used by thousands of users to compare phones, deals, and technical articles.</p>
+                  <div class="pills mb-3"><span>JavaScript</span><span>Bootstrap</span><span>Axios</span></div>
+                  <a class="work-card__link" href="https://daleelmob.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/3aedi.png" loading="lazy" alt="3aedi dashboard"></div>
+               <div class="work-card__body">
+                  <span class="work-card__tag">Analytics · 2025</span>
+                  <h3>3aedi</h3>
+                  <p>Analytics platform for e-commerce profit: sales, ads, expenses, subscriptions, and store integrations like Salla, Zid, and Meta — built independently in TypeScript.</p>
+                  <div class="pills mb-3"><span>TypeScript</span><span>React</span><span>Chart.js</span></div>
+                  <a class="work-card__link" href="https://app.3aedi.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+      </div>
+
+      <div class="text-center my-5">
+         <button type="button" id="toggleMoreWork" class="toggle-more">Show more work</button>
+      </div>
+
+      <div id="moreWork" class="row g-4 more-work">
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/digitalhub.png" loading="lazy" alt="Digital Hub"></div>
+               <div class="work-card__body">
+                  <h3>Digital Hub</h3>
+                  <p>Company website for services, products, and case studies.</p>
+                  <a class="work-card__link" href="https://digitalhub.com.eg/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/zari system.png" loading="lazy" alt="Zari Loyalty"></div>
+               <div class="work-card__body">
+                  <h3>Zari Loyalty</h3>
+                  <p>Responsive site for loyalty services and company information.</p>
+                  <a class="work-card__link" href="https://zariloyalty.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/shaghaf.png" loading="lazy" alt="shaghaf"></div>
+               <div class="work-card__body">
+                  <h3>shaghaf</h3>
+                  <p>Creative carpentry workshop website with a contact flow.</p>
+                  <a class="work-card__link" href="https://shaghafalibdaa.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/rased-tech.png" loading="lazy" alt="Rased Tech"></div>
+               <div class="work-card__body">
+                  <h3>Rased Tech</h3>
+                  <p>Catalog for smart-home and networking products.</p>
+                  <a class="work-card__link" href="https://rased-tech.vercel.app/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/bytrh.png" loading="lazy" alt="Bytrh Dashboard"></div>
+               <div class="work-card__body">
+                  <h3>Bytrh Dashboard</h3>
+                  <p>Admin dashboard with CRUD tables and real-time chat.</p>
+                  <a class="work-card__link" href="https://admin.bytrh.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/zarifalcon.png" loading="lazy" alt="Zari Falcon"></div>
+               <div class="work-card__body">
+                  <h3>Zari Falcon</h3>
+                  <p>Website and dashboard for visits, tracking, and reports.</p>
+                  <a class="work-card__link" href="https://zarifalcon.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Zari Main Website.png" loading="lazy" alt="Zari Main Website"></div>
+               <div class="work-card__body">
+                  <h3>Zari Main Website</h3>
+                  <p>Production company site for services, products, and projects.</p>
+                  <a class="work-card__link" href="https://zarisolution.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/on time.png" loading="lazy" alt="Zari On Time"></div>
+               <div class="work-card__body">
+                  <h3>Zari On Time</h3>
+                  <p>Service website for Zari On Time.</p>
+                  <a class="work-card__link" href="https://zariontime.com/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/appe.png" loading="lazy" alt="Appe Website"></div>
+               <div class="work-card__body">
+                  <h3>Appe Website</h3>
+                  <p>Responsive services template built with React.</p>
+                  <a class="work-card__link" href="https://appe-services-main.vercel.app/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/e-commerce.png" loading="lazy" alt="Zari E-Commerce landing page"></div>
+               <div class="work-card__body">
+                  <h3>Zari E-Commerce</h3>
+                  <p>Landing page for e-commerce services.</p>
+                  <a class="work-card__link" href="https://zariagency.com/emarketing/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Movies App.png" loading="lazy" alt="Movies App"></div>
+               <div class="work-card__body">
+                  <h3>Movies App</h3>
+                  <p>Movie discovery app with ratings and a registration form.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Movies-App/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Real Time Weather.png" loading="lazy" alt="Weather App"></div>
+               <div class="work-card__body">
+                  <h3>Weather App</h3>
+                  <p>Three-day forecast search by country name.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Weather-App/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Recipes meal.png" loading="lazy" alt="Recipes Meal App"></div>
+               <div class="work-card__body">
+                  <h3>Recipes Meal</h3>
+                  <p>Recipe explorer with search and meal details.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Recipes-Meal-App/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/login.png" loading="lazy" alt="Smart Login System"></div>
+               <div class="work-card__body">
+                  <h3>Smart Login</h3>
+                  <p>Login and logout validation with local storage.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Smart-Login-System/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/CRUDs Operations.png" loading="lazy" alt="CRUDs Operations"></div>
+               <div class="work-card__body">
+                  <h3>CRUDs Operations</h3>
+                  <p>Project management CRUD with validation.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/CRUDs-Operations/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Egyptian-Party.png" loading="lazy" alt="Egyptian Party"></div>
+               <div class="work-card__body">
+                  <h3>Egyptian Party</h3>
+                  <p>Event landing page with a countdown timer.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Egyptian-Party/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Earth Quotes.png" loading="lazy" alt="Earth Slider Quotes"></div>
+               <div class="work-card__body">
+                  <h3>Earth Slider Quotes</h3>
+                  <p>Photo slider with accompanying quotes.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Earth-Slider-Quotes/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Book Marker.png" loading="lazy" alt="Book Marker CRUD"></div>
+               <div class="work-card__body">
+                  <h3>Book Marker CRUD</h3>
+                  <p>Bookmark manager with CRUD validation.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Book-Marker-CRUD/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/Quote of the day.png" loading="lazy" alt="Quote of the day"></div>
+               <div class="work-card__body">
+                  <h3>Quote of the day</h3>
+                  <p>Random quotes generated on button press.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Quote-of-the-day/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/slideshow-3.jpg" loading="lazy" alt="Angora Portfolio"></div>
+               <div class="work-card__body">
+                  <h3>Angora Portfolio</h3>
+                  <p>Responsive Bootstrap template.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Angora-Responsive/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/work-5.jpg" loading="lazy" alt="DevFolio Portfolio"></div>
+               <div class="work-card__body">
+                  <h3>DevFolio Portfolio</h3>
+                  <p>Responsive Bootstrap template.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/DevFolio-Bootstrap/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/intro-bg.jpg" loading="lazy" alt="Simone Portfolio"></div>
+               <div class="work-card__body">
+                  <h3>Simone Portfolio</h3>
+                  <p>Simple responsive HTML/CSS template.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Simone-portfolio/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+         <div class="col-md-6 col-xl-4">
+            <article class="work-card">
+               <div class="work-card__media"><img src="img/slider-01.jpg" loading="lazy" alt="Fokir Portfolio"></div>
+               <div class="work-card__body">
+                  <h3>Fokir Portfolio</h3>
+                  <p>Simple responsive HTML/CSS template.</p>
+                  <a class="work-card__link" href="https://ahmedrashed1619.github.io/Fokir-Portfolio/" target="_blank" rel="noopener noreferrer">Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+            </article>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section id="contact" class="contact py-5">
+   <div class="container py-4">
+      <div class="section-head text-center">
+         <div class="section-kicker">Contact</div>
+         <h2>Let’s work together</h2>
+      </div>
+      <div class="row g-4">
+         <div class="col-lg-5">
+            <div class="contact-card">
+               <h3 class="h4 mb-3">Get in touch</h3>
+               <p class="mb-4" style="color:var(--muted)">Send a message any time. I’m open to roles, freelance work, and product collaborations.</p>
+               <div class="contact-item">
+                  <i class="fa-solid fa-user main-color"></i>
+                  <div>
+                     <h6 class="mb-1">Name</h6>
+                     <p>Ahmed Rashed</p>
+                  </div>
+               </div>
+               <div class="contact-item">
+                  <i class="fa-solid fa-phone main-color"></i>
+                  <div>
+                     <h6 class="mb-1">Phone</h6>
+                     <a href="tel:+201092999658">+201092999658</a>
+                  </div>
+               </div>
+               <div class="contact-item">
+                  <i class="fa-solid fa-envelope main-color"></i>
+                  <div>
+                     <h6 class="mb-1">Email</h6>
+                     <a href="mailto:ahmedrashed1619@gmail.com">ahmedrashed1619@gmail.com</a>
+                  </div>
+               </div>
+               <div class="contact-item mb-0">
+                  <i class="fa-solid fa-location-dot main-color"></i>
+                  <div>
+                     <h6 class="mb-1">Address</h6>
+                     <p>El-Malik Faisal St - Giza - Egypt</p>
+                  </div>
                </div>
             </div>
-            <div class="col-lg-6">
-               <h4 class="fw-bold">Get in Touch</h4>
-               <p class="my-4">Please send me an email or call me at any time of the day. I'm always happy to connect and discuss new opportunities.</p>
-               <div class="name d-flex justify-content-between">
-                  <span><i class="fa-solid fa-user-large fs-3 me-4 pe-1 mt-2 main-color"></i></span>
-                  <div class="info me-auto">
-                     <h6 class="fw-bold">Name</h6>
-                     <p class="text-muted">Ahmed Rashed</p>
-                  </div>
-               </div>
-               <div class="phone d-flex justify-content-between mb-2">
-                  <span><i class="fa-solid fa-phone fs-3 me-4 pe-2 mt-2 main-color"></i></span>
-                  <div class="info me-auto">
-                     <h6 class="fw-bold">Phone</h6>
-                     <a href="tel:+201092999658" target="_blank" class="text-muted text-decoration-none">+201092999658</a>
-                  </div>
-               </div>
-               <div class="email d-flex justify-content-between mb-2">
-                  <span><i class="fa-solid fa-envelope-circle-check fs-3 me-4 pe-1 mt-2 main-color"></i></span>
-                  <div class="info me-auto">
-                     <h6 class="fw-bold">Email</h6>
-                     <a href="mailto: ahmedrashed1619@gmail.com" target="_blank" class="text-muted text-decoration-none">ahmedrashed1619@gmail.com.</a>
-                  </div>
-               </div>
-               <div class="address d-flex justify-content-between my-1">
-                  <span><i class="fa-solid fa-location-dot fs-3 me-4 pe-3 mt-2 main-color"></i></span>
-                  <div class="info me-auto">
-                     <h6 class="fw-bold">Address</h6>
-                     <p class="text-muted">El-Malik Faisal St - Giza - Egypt. </p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-6">
-               <h4 class="fw-bold mb-4">Message me</h4>
+         </div>
+         <div class="col-lg-7">
+            <div class="form-shell">
+               <h3 class="h4 mb-4">Message me</h3>
                <form class="form-cont" id="contact-form">
-                  <div class="input mb-4">
-                     <input id="name" type="text" name="data[name]" class="form-control" placeholder="Name " required>
-                     <div id="alertName" class="alert alert-danger p-1 text-center mx-auto my-2 ">Should be consisting of a capital letter and 2-15 small letters.</div>
+                  <div class="mb-3">
+                     <input id="name" type="text" name="data[name]" class="form-control" placeholder="Name" required>
+                     <div id="alertName" class="alert alert-danger p-1 text-center mx-auto my-2">Please enter a valid name (at least 2 characters).</div>
                   </div>
-                  <div class="input mb-4">
-                     <input id="email" type="email" name="data[email]" class="form-control" placeholder="Email " required>
-                     <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto my-2">Should be valid email.</div>
+                  <div class="mb-3">
+                     <input id="email" type="email" name="data[email]" class="form-control" placeholder="Email" required>
+                     <div id="alertEmail" class="alert alert-danger p-1 text-center mx-auto my-2">Should be a valid email.</div>
                   </div>
-                  <div class="input mb-2">
-                     <textarea id="message" class="form-control" name="data[message]" maxlength="300" rows="6" placeholder="Message " required></textarea>
-                     <p class="count mb-0"><span id="counter"></span> : Counter</p>
-                     <div id="alertMessage" class="alert alert-danger p-1 text-center mx-auto mt-0 mb-2">Must not exceed 300 characters.</div>
+                  <div class="mb-3">
+                     <textarea id="message" class="form-control" name="data[message]" maxlength="300" rows="6" placeholder="Message" required></textarea>
+                     <p class="count mb-0"><span id="counter"></span> characters left</p>
+                     <div id="alertMessage" class="alert alert-danger p-1 text-center mx-auto mt-2">Message should be between 8 and 300 characters.</div>
                   </div>
-                  <p id="alertSend" class="fs-6 mb-0 w-50 text-center mx-auto"></p>
-                  <button id="sendMessage" type="submit" class="btn main-bg text-white text-decoration-none px-2 py-2 mt-3 me-2"><i class="fa-solid fa-paper-plane me-3"></i> Send message</button>
-                  <button id="reset" class="btn main-bg text-white py-2 mt-3 ms-2"><i class="fa-solid fa-rotate-left me-2"></i>Reset Form</button>
+                  <p id="alertSend" class="fs-6 mb-3 text-center"></p>
+                  <button id="sendMessage" type="submit" class="btn btn-primary-ui me-2"><i class="fa-solid fa-paper-plane me-2"></i>Send message</button>
+                  <button id="reset" type="button" class="btn btn-ghost-ui"><i class="fa-solid fa-rotate-left me-2"></i>Reset</button>
                </form>
             </div>
          </div>
@@ -761,39 +595,28 @@
    </div>
 </section>
 
-<!------------------------------------------Footer------------------------------------------>
-<footer class="footer">
-   <div class="cont-footer py-5 bg-simeBlack text-white text-center position-relative">
-      <a href="#home" class="position-absolute top-0 end-0 translate-middle text-white"><i class="fa-solid fa-chevron-up fs-3 p-2 main-bg rounded-circle"></i></a>
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-6">
-               <div class="copy-right">
-                  <p>created by <a href="#about" class="main-color">Rashed</a> &copy; Copyright <span class="main-color">2024</span></p>
-               </div>
-            </div>
-            <div class="col-lg-6">
-               <div class="links text-white w-50 ms-auto d-flex justify-content-evenly align-items-center">
-                  <a target="_blank" href="https://www.facebook.com/ahmed.rashed.10297701"><i class="fa-brands fa-facebook-f p-2 rounded-circle"></i></a>
-                  <a target="_blank" href="https://www.instagram.com/a.rashed1619"><i class="fa-brands fa-instagram p-2 rounded-circle"></i></a>
-                  <a target="_blank" href="https://twitter.com/Rashed166199?s=07"><i class="fa-brands fa-twitter p-2 rounded-circle"></i></a>
-                  <a target="_blank" href="https://www.linkedin.com/in/ahmed-rashed-008b33221"><i class="fa-brands fa-linkedin-in p-2 rounded-circle"></i></a>
-                  <a target="_blank" href="https://github.com/Ahmedrashed1619"><i class="fa-brands fa-github p-2 rounded-circle"></i></a>
-               </div>
+<footer class="footer py-4">
+   <div class="container">
+      <div class="row align-items-center gy-3">
+         <div class="col-lg-6">
+            <p class="copy-right mb-0">Designed &amp; built by <a href="#about" class="main-color text-decoration-none">Rashed</a> © <span class="main-color">2026</span></p>
+         </div>
+         <div class="col-lg-6">
+            <div class="links d-flex justify-content-lg-end justify-content-start gap-2">
+               <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ahmed-rashed-008b33221" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+               <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ahmedrashed1619" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+               <a href="mailto:ahmedrashed1619@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
          </div>
       </div>
    </div>
 </footer>
 
-
-<!---------------------------------------------JS files---------------------------------------------->
       <script src="js/all.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="js/typed.min.js"></script>
-      <script src="js/main.js"></script>
+      <script src="js/main.js?v=6"></script>
 
    </body>
-
 </html>
