@@ -382,89 +382,211 @@ a {
 }
 
 .colors {
-    width: 280px;
+    --panel-radius: 22px;
+    --toggle-size: 52px;
+    --toggle-gap: 10px;
+    width: min(92vw, 320px);
     z-index: 1100;
-    top: 22%;
+    top: 96px;
     right: 0;
     transform: translateX(100%);
     position: fixed !important;
-    padding: 1.35rem 1.1rem 1.2rem;
-    border: 1px solid var(--line);
-    border-right: 0;
-    border-radius: 18px 0 0 18px;
     color: var(--text);
-    background: var(--panel-bg);
-    backdrop-filter: blur(16px);
-    box-shadow: var(--shadow);
-    transition: transform 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), right 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .colors.is-open {
+    right: 16px;
     transform: translateX(0);
 }
 
-.colors .screen-show h5 {
-    font-size: 0.92rem;
-    letter-spacing: 0.08em;
+.colors-card {
+    padding: 1.15rem 1.1rem 1.15rem;
+    border: 1px solid var(--line);
+    border-radius: var(--panel-radius);
+    background: var(--panel-bg);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+}
+
+.colors:not(.is-open) .colors-card {
+    pointer-events: none;
+}
+
+.colors-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    text-align: start;
+}
+
+.colors-kicker {
+    margin: 0 0 0.2rem;
+    color: var(--mainColor);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
+}
+
+.colors-head h5 {
+    margin: 0;
+    font-size: 1.05rem;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.colors-close {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--icon-bg);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.colors-close:hover {
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+    background: color-mix(in srgb, var(--mainColor) 12%, transparent);
+}
+
+.colors-current {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: start;
+    margin-bottom: 1rem;
+    padding: 0.75rem 0.8rem;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--mainColor) 8%, transparent);
+}
+
+.colors-live {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--mainColor);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--mainColor) 18%, transparent);
+}
+
+.colors-current strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.12rem;
+}
+
+.colors-current span {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.colors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
     margin-bottom: 1rem;
 }
 
-.screen-show ul li {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
+.color-swatch {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto;
+    border: 0;
     border-radius: 50%;
-    border: 2px solid transparent;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.screen-show ul li:hover,
-.screen-show ul li.is-active {
-    transform: scale(1.18);
-    border-color: var(--text);
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--mainColor) 25%, transparent);
+.color-swatch:hover,
+.color-swatch:focus-visible {
+    transform: scale(1.12);
+    outline: none;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+        0 8px 18px color-mix(in srgb, var(--mainColor) 28%, transparent);
 }
 
-.screen-show > a {
+.color-swatch.is-active {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 0 3px var(--bg),
+        0 0 0 6px var(--text);
+}
+
+.color-swatch.is-active::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.colors-reset {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
+    padding: 0.72rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.colors-reset:hover {
+    transform: translateY(-2px);
+    color: #fff;
+    border-color: var(--mainColor);
+    background: var(--mainColor);
+}
+
+.colors-toggle {
     position: absolute;
     top: 0;
-    left: -52px;
-    width: 52px;
-    height: 52px;
+    left: calc(-1 * (var(--toggle-size) + var(--toggle-gap)));
+    width: var(--toggle-size);
+    height: var(--toggle-size);
     border: 1px solid var(--line);
-    border-right: 0;
-    border-radius: 14px 0 0 14px;
+    border-radius: var(--panel-radius);
     cursor: pointer;
     display: grid;
     place-items: center;
     color: var(--text);
     background: var(--panel-bg);
-    transition: color 0.25s ease, background 0.25s ease;
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
-.screen-show > a:hover {
-    color: var(--mainColor);
+.colors-toggle:hover,
+.colors.is-open .colors-toggle {
+    color: #fff;
+    border-color: var(--mainColor);
+    background: var(--mainColor);
 }
 
-.defult {
-    background-color: crimson;
-    border: none;
-    border-radius: 999px;
-    transition: transform 0.25s ease, filter 0.25s ease;
+.colors-toggle i {
+    transition: transform 0.45s ease;
 }
 
-.defult:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.08);
-}
-
-.screen-show > a svg {
-    transition: transform 0.5s ease;
-}
-
-.screen-show > a:hover svg {
-    transform: rotate(45deg);
+.colors-toggle:hover i,
+.colors.is-open .colors-toggle i {
+    transform: rotate(18deg);
 }
 
 .header {
@@ -1266,6 +1388,13 @@ textarea {
     }
     .service-step::after {
         display: none;
+    }
+    .colors {
+        --toggle-size: 46px;
+        --toggle-gap: 8px;
+        width: min(86vw, 300px);
+        top: 88px;
+        right: 10px;
     }
 }
 

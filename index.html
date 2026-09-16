@@ -28,7 +28,7 @@
       </script>
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css?v=8">
+      <link rel="stylesheet" href="css/style.css?v=10">
    </head>
 
    <body>
@@ -52,30 +52,34 @@
    </div>
 </div>
 
-<div class="colors text-center">
-   <div class="screen-show list-unstyled">
-      <a class="fs-5 rotate-icon" aria-label="Open theme colors"><i class="fa-solid fa-palette"></i></a>
-      <h5>Theme colors</h5>
-      <div class="row g-3">
-         <div class="col-12">
-            <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0">
-               <li></li><li></li><li></li><li></li>
-            </ul>
+<aside class="colors" id="themePanel">
+   <button type="button" class="colors-toggle rotate-icon" aria-expanded="false" aria-controls="themePanelBody" aria-label="Open theme colors">
+      <i class="fa-solid fa-palette"></i>
+   </button>
+   <div class="colors-card" id="themePanelBody">
+      <div class="colors-head">
+         <div>
+            <p class="colors-kicker">Appearance</p>
+            <h5>Accent color</h5>
          </div>
-         <div class="col-12">
-            <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0">
-               <li></li><li></li><li></li><li></li>
-            </ul>
-         </div>
-         <div class="col-12">
-            <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0">
-               <li></li><li></li><li></li><li></li>
-            </ul>
+         <button type="button" class="colors-close" aria-label="Close theme colors">
+            <i class="fa-solid fa-xmark"></i>
+         </button>
+      </div>
+      <div class="colors-current">
+         <span class="colors-live" aria-hidden="true"></span>
+         <div>
+            <strong class="colors-name">Crimson</strong>
+            <span>Updates buttons, links, and highlights</span>
          </div>
       </div>
-      <button type="button" class="btn defult default text-white fw-bold px-3 py-2 mt-4"><i class="fa-solid fa-rotate-left me-2"></i>Default color</button>
+      <div class="colors-grid" role="listbox" aria-label="Accent colors"></div>
+      <button type="button" class="colors-reset defult">
+         <i class="fa-solid fa-rotate-left"></i>
+         Reset to default
+      </button>
    </div>
-</div>
+</aside>
 
 <header id="home" class="header">
    <div class="caption d-flex justify-content-center align-items-center text-center">
@@ -696,7 +700,7 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="js/typed.min.js"></script>
-      <script src="js/main.js?v=7"></script>
+      <script src="js/main.js?v=8"></script>
 
    </body>
 </html>

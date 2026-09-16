@@ -49,37 +49,119 @@ $(document).ready(function(){
 
 
 
-// rotation location colors container.... 
+// theme color panel
 
-$('.rotate-icon').click(function(){
-    $('.colors').toggleClass('is-open');
-})
+const accentColors = [
+    { name: 'Royal', value: '#4169e1' },
+    { name: 'Leaf', value: '#66b95c' },
+    { name: 'Amber', value: '#ff9800' },
+    { name: 'Pink', value: '#ff5e94' },
+    { name: 'Orange', value: '#fa5b0f' },
+    { name: 'Tan', value: 'tan' },
+    { name: 'Violet', value: '#9200ee' },
+    { name: 'Mint', value: '#00d4bd' },
+    { name: 'Teal', value: '#5e9e9f' },
+    { name: 'Rose', value: '#e65f78' },
+    { name: 'Olive', value: '#666d41' },
+    { name: 'Red', value: '#fe0000' }
+];
+const defaultAccent = { name: 'Crimson', value: 'crimson' };
 
-
-
-// change main colorShow...
-
-let colorsGroup = ['#4169e1', '#66b95c', '#ff9800', '#ff5e94', '#fa5b0f', 'tan', '#9200ee', '#00d4bd', '#5e9e9f', '#e65f78', '#666d41', '#fe0000']
-
-for (let i = 0; i < colorsGroup.length; i++)
-{
-    $('.screen-show .col-12 li').eq(i).css("backgroundColor",colorsGroup[i])
+function normalizeColor(value) {
+    if (!value) return '';
+    const trimmed = String(value).trim().toLowerCase();
+    if (trimmed.startsWith('#')) return trimmed;
+    if (trimmed === 'crimson' || trimmed === 'tan') return trimmed;
+    const parts = trimmed.match(/\d+/g);
+    if (!parts || parts.length < 3) return trimmed;
+    return '#' + parts.slice(0, 3).map(function (n) {
+        return Number(n).toString(16).padStart(2, '0');
+    }).join('');
 }
 
-$('.screen-show .col-12 li').click(function(){
-    $('.screen-show li').removeClass('is-active');
-    $(this).addClass('is-active');
-    let currentColor = $(this).css("backgroundColor");
-    $(document.documentElement).css('--mainColor', currentColor);
-    localStorage.setItem('themeColor', currentColor);
-})
+function findAccent(value) {
+    const current = normalizeColor(value);
+    return accentColors.find(function (color) {
+        return normalizeColor(color.value) === current;
+    }) || (normalizeColor(defaultAccent.value) === current || current === '#dc143c' ? defaultAccent : { name: 'Custom', value: value });
+}
 
-$('.defult').click(function(){
-    let myValue = 'crimson';
-    $(document.documentElement).css('--mainColor', myValue);
-    localStorage.setItem('themeColor', myValue);
-    $('.screen-show li').removeClass('is-active');
-})
+function setAccent(color, persist) {
+    $(document.documentElement).css('--mainColor', color.value);
+    $('.colors-name').text(color.name);
+    $('.color-swatch').removeClass('is-active').attr('aria-selected', 'false');
+    $('.color-swatch').filter(function () {
+        return normalizeColor($(this).attr('data-color')) === normalizeColor(color.value);
+    }).addClass('is-active').attr('aria-selected', 'true');
+    if (persist !== false) {
+        localStorage.setItem('themeColor', color.value);
+    }
+}
+
+function openThemePanel() {
+    $('.colors').addClass('is-open');
+    $('.colors-toggle').attr('aria-expanded', 'true').attr('aria-label', 'Close theme colors');
+}
+
+function closeThemePanel() {
+    $('.colors').removeClass('is-open');
+    $('.colors-toggle').attr('aria-expanded', 'false').attr('aria-label', 'Open theme colors');
+}
+
+function toggleThemePanel() {
+    if ($('.colors').hasClass('is-open')) {
+        closeThemePanel();
+    } else {
+        openThemePanel();
+    }
+}
+
+accentColors.forEach(function (color) {
+    $('<button type="button" class="color-swatch" role="option" aria-selected="false"></button>')
+        .attr('data-color', color.value)
+        .attr('data-name', color.name)
+        .attr('aria-label', color.name + ' accent')
+        .css('backgroundColor', color.value)
+        .appendTo('.colors-grid');
+});
+
+$('.rotate-icon').click(function (event) {
+    event.stopPropagation();
+    toggleThemePanel();
+});
+
+$('.colors-close').click(function (event) {
+    event.stopPropagation();
+    closeThemePanel();
+});
+
+$('.colors-card').click(function (event) {
+    event.stopPropagation();
+});
+
+$(document).on('click', function () {
+    closeThemePanel();
+});
+
+$(document).on('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closeThemePanel();
+    }
+});
+
+$('.colors-grid').on('click', '.color-swatch', function () {
+    setAccent({
+        name: $(this).attr('data-name'),
+        value: $(this).attr('data-color')
+    });
+});
+
+$('.defult').click(function () {
+    setAccent(defaultAccent);
+});
+
+const savedAccent = localStorage.getItem('themeColor');
+setAccent(savedAccent ? findAccent(savedAccent) : defaultAccent, false);
 
 $('#themeToggle').click(function(){
     const nextMode = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
