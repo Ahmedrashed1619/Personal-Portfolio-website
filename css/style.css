@@ -647,6 +647,18 @@ a {
     justify-content: center;
 }
 
+html[data-theme="dark"] .hero-actions .btn-ghost-ui {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.42);
+}
+
+html[data-theme="light"] .hero-actions .btn-ghost-ui {
+    background: var(--bg-elev);
+    color: var(--text) !important;
+    border-color: transparent;
+    box-shadow: var(--shadow);
+}
+
 .scroll-hint {
     margin-top: 2.4rem;
     color: var(--muted);
